@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 13:55:16 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 07:45:54 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,6 @@ void	rotate_z(float angle, t_point *pt, int points)
 		y1 = pt[i].x * sin(angle) + pt[i].y * cos(angle);
 		pt[i].x = x1;
 		pt[i].y = y1;
-		i++;
-	}
-}
-
-void	project_mod(t_point *point, int points, float mod)
-{
-	int	i;
-
-	i = 0;
-	while (i < points)
-	{
-		point[i].x *= mod;
-		point[i].y *= mod;
 		i++;
 	}
 }
