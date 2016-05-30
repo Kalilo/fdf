@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 09:34:39 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 11:33:48 by meckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ int					map(t_mapinfo file, t_point **cloud);
 void				ft_init_map(t_mapinfo mapinfo);
 
 t_point				get_point(int x, int y, t_mapinfo map);
+
+int					ft_argcheck(int argc, char **argv, t_mapinfo *map);
 
 #endif
