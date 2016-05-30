@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 15:33:52 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 17:14:21 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ int	main(int argc, char **argv)
 			printf("map[%d] = %s\n",i, file.map[i]);
 			i++;
 		}
+		printf("after print\n");
 		file.width = map(file, &file.points);
 		printf("points = %d\n", file.width);
 		print_cloud(file);
-		file.points_num = points_c;
+		file.points_num = file.lines * file.width;
 		ft_init_map(file);
 	}
 }
