@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 10:03:17 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 12:56:47 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_point	get_point(int x, int y, t_mapinfo map)
 	return (map.points[pt]);	
 }
 
-t_point new_point(float x, float y, float z)
+t_point new_point(int x, int y, int z)
 {
 	t_point	new;
 
@@ -42,7 +42,7 @@ t_point new_point(float x, float y, float z)
 }
 
 /*Will offset coordinates by respective values*/
-void	translate_point(float x, float y, float z, t_point *point)
+void	translate_point(int x, int y, int z, t_point *point)
 {
 	point->x += x;
 	point->y += y;

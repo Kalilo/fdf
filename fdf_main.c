@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 11:38:12 by meckhard         ###   ########.fr       */
+/*   Updated: 2016/05/30 12:57:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_cloud(t_point *cloud, int points)
 	i = 0;
 	while (i < points)
 	{
-		printf("point[%d] : (%.1f ; %.1f ; %.1f)\n", i + 1, cloud[i].x, cloud[i].y, cloud[i].z);
+		printf("point[%d] : (%d ; %d ; %d)\n", i + 1, cloud[i].x, cloud[i].y, cloud[i].z);
 		i++;
 	}
 }

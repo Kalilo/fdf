@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 11:33:48 by meckhard         ###   ########.fr       */
+/*   Updated: 2016/05/30 12:56:23 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 
 typedef struct		s_point
 {
-	float	x;
-	float	y;
-	float	z;
+	int	x;
+	int	y;
+	int	z;
 }					t_point;
 
 typedef struct		s_mapinfo
@@ -40,9 +40,9 @@ typedef struct		s_mapinfo
 	int		scale_y;
 }					t_mapinfo;
 
-t_point				new_point(float x, float y, float z);
+t_point				new_point(int x, int y, int z);
 
-void				translate_point(float x, float y, float z, t_point *point);
+void				translate_point(int x, int y, int z, t_point *point);
 
 void				scale_cloud(t_point *point, float scale_f, int points);
 

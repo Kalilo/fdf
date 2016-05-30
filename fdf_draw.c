@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/30 09:52:44 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 12:57:34 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_draw_map(t_mapinfo mapinfo)
 		while (x < mapinfo.points_num / mapinfo.lines)
 		{
 			point = get_point(x, y, mapinfo);
-			printf("%f %f %f\n", point.x, point.y, point.z);
+			printf("%d %d %d\n", point.x, point.y, point.z);
 			//mlx_pixel_put(mapinfo.mlx, mapinfo.win, x * 20, y * 20, i);
 			if (lp == 1)
 				ft_drawline(mapinfo.lastpoint, point, mapinfo);
