@@ -6,27 +6,34 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 12:57:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 14:25:50 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	print_cloud(t_point *cloud, int points)
+void	print_cloud(t_mapinfo map)
 {
-	int	i;
-	i = 0;
-	while (i < points)
+	int	l;
+	int c;
+	l = 0;
+	c = 0;
+	while (l < map.lines)
 	{
-		printf("point[%d] : (%d ; %d ; %d)\n", i + 1, cloud[i].x, cloud[i].y, cloud[i].z);
-		i++;
+		c = 0;
+		while (c < map.width)
+		{
+			printf("point[%d][%d] : (%d ; %d ; %d)\n", l , c, map.points[l][c].x, map.points[l][c].y, map.points[l][c].z);
+			c++;
+		}
+		l++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
 	t_mapinfo	file;
-	t_point		*cloud;
+	t_point		**cloud;
 	int			points_c;
 	int	i = 0;
 			
@@ -40,12 +47,13 @@ int	main(int argc, char **argv)
 			printf("map[%d] = %s\n",i, file.map[i]);
 			i++;
 		}
-		points_c = map(file, &cloud);
-		printf("points = %d\n", points_c);
-		//print_cloud(cloud, points_c);
+		file.width = map(file, &file.points);
+		printf("points = %d\n", file.width);
+		//file.width = pointsfile.lines;
+		print_cloud(file);
 		file.points_num = points_c;
 		file.points = cloud;
-		ft_init_map(file);
-		print_cloud(cloud, 1);
+	//	ft_init_map(file);
+	//	print_cloud(cloud, 1);
 	}
 }

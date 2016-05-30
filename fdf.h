@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 13:13:01 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 14:18:20 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,17 @@ typedef struct		s_mapinfo
 {
 	char	**map;
 	int		lines;
+	int		width;
 	int		points_num;
 	void	*mlx;
 	void	*win;
-	t_point	*points;
+	t_point	**points;
 	t_point	lastpoint;
 	int		scale_x;
 	int		scale_y;
 }					t_mapinfo;
 
+/*
 typedef struct		s_bresenham
 {
 	int				delta_x;
@@ -52,7 +54,7 @@ typedef struct		s_bresenham
 	int				sign_y;
 	int				delta_error;
 }					t_bresenham;
-
+*/
 t_point				new_point(int x, int y, int z);
 
 void				translate_point(int x, int y, int z, t_point *point);
@@ -71,7 +73,7 @@ int					count_lines(char *filename);
 
 t_mapinfo			read_map(char* filename);
 
-int					map(t_mapinfo file, t_point **cloud);
+int					map(t_mapinfo file, t_point ***cloud);
 
 void				ft_init_map(t_mapinfo mapinfo);
 

@@ -6,12 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 12:56:47 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 14:07:23 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*Manipulate t_points*/
 #include "fdf.h"
+
 
 t_point	get_point(int x, int y, t_mapinfo map)
 {
@@ -28,7 +29,7 @@ t_point	get_point(int x, int y, t_mapinfo map)
 		i++;
 	}
 	pt += per_line + x;
-	return (map.points[pt]);	
+	return (map.points[x][y]);
 }
 
 t_point new_point(int x, int y, int z)
