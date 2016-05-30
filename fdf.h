@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 14:18:20 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 14:34:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 # include "mlx.h"
 # define WIN_X 400
 # define WIN_Y 400
-# define BLUE 0x0041FF
-# define BROWN 0xAD4F09
-# define GREEN 0x25FF50
-# define WHITE 0xFFFFFF
 
 typedef struct		s_point
 {
@@ -40,21 +36,10 @@ typedef struct		s_mapinfo
 	void	*mlx;
 	void	*win;
 	t_point	**points;
-	t_point	lastpoint;
 	int		scale_x;
 	int		scale_y;
 }					t_mapinfo;
 
-/*
-typedef struct		s_bresenham
-{
-	int				delta_x;
-	int				sign_x;
-	int				delta_y;
-	int				sign_y;
-	int				delta_error;
-}					t_bresenham;
-*/
 t_point				new_point(int x, int y, int z);
 
 void				translate_point(int x, int y, int z, t_point *point);
