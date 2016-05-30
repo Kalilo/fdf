@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 07:51:32 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 08:15:13 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ typedef struct		s_mapinfo
 {
 	char	**map;
 	int		lines;
+	int		points_num;
+	void	*mlx;
+	void	*win;
+	t_point	*points;
 }					t_mapinfo;
 
 t_point				new_point(float x, float y, float z);
@@ -52,5 +56,7 @@ int					count_lines(char *filename);
 t_mapinfo			read_map(char* filename);
 
 int					map(t_mapinfo file, t_point **cloud);
+
+void				ft_init_map(t_mapinfo mapinfo);
 
 #endif

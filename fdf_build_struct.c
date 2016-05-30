@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 16:23:20 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 07:46:32 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	map(t_mapinfo file, t_point **cloud)
 		split_line = ft_strsplit(file.map[l], ' ');
 		while (c < d_count)
 		{
-			new[i++] = new_point(c, (float)ft_atoi(split_line[c++]), l);
+			new[i++] = new_point(c, (float)ft_atoi(split_line[c]), l);
+			c++;
 			//printf("%.1f;%.1f;%.1f\t",	new[i].x, new[i].y, new[i].z);
 		}
 		free(split_line);

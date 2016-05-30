@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 16:23:25 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/30 08:40:44 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,19 @@ int	main(int argc, char **argv)
 	int			points_c;
 	int	i = 0;
 			
-	ft_printf("Commencing things\n");
+	printf("Commencing things\n");
 	file = read_map(argv[1]);
-	ft_printf("lines = %d\n", file.lines);
+	printf("lines = %d\n", file.lines);
 	while (i < file.lines)
 	{
-		ft_printf("map[%d] = %s\n",i, file.map[i]);
+		printf("map[%d] = %s\n",i, file.map[i]);
 		i++;
 	}
 	points_c = map(file, &cloud);
-	ft_printf("points = %d\n", points_c);
-	print_cloud(cloud, 1);
-	translate_point(5, 5, 5, cloud);
-	ft_printf("translated by 5 ,5, 5\n");
+	printf("points = %d\n", points_c);
+	print_cloud(cloud, points_c);
+	file.points_num = points_c;
+	file.points = cloud;
+	ft_init_map(file);
 	print_cloud(cloud, 1);
 }
