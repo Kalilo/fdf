@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 09:06:25 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 09:25:19 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_mapinfo
 	void	*mlx;
 	void	*win;
 	t_point	*points;
+	t_point	lastpoint;
 }					t_mapinfo;
 
 t_point				new_point(float x, float y, float z);
