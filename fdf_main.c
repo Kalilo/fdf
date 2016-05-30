@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 14:53:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 15:33:52 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_cloud(t_mapinfo map)
 		c = 0;
 		while (c < map.width)
 		{
-			//printf("point[%d][%d] : (%d ; %d ; %d)\n", l , c, map.points[l][c].x, map.points[l][c].y, map.points[l][c].z);
+			printf("point[%d][%d] : (%d ; %d ; %d)\n", l , c, map.points[l][c].x, map.points[l][c].y, map.points[l][c].z);
 			c++;
 		}
 		l++;
@@ -33,7 +33,7 @@ void	print_cloud(t_mapinfo map)
 int	main(int argc, char **argv)
 {
 	t_mapinfo	file;
-	t_point		**cloud;
+	t_mapinfo	f_err;
 	int			points_c;
 	int	i = 0;
 			
@@ -41,6 +41,9 @@ int	main(int argc, char **argv)
 	if ((ft_argcheck(argc, argv, &file)) == 0)
 	{
 		file = read_map(argv[1]);
+		file.scale_x = ft_atoi(argv[2]);
+		file.scale_y = ft_atoi(argv[3]);
+		printf("scale_x = %d, scale_y = %d\n", file.scale_x, file.scale_y);
 		printf("lines = %d\n", file.lines);
 		while (i < file.lines)
 		{
@@ -49,11 +52,8 @@ int	main(int argc, char **argv)
 		}
 		file.width = map(file, &file.points);
 		printf("points = %d\n", file.width);
-		//file.width = pointsfile.lines;
 		print_cloud(file);
 		file.points_num = points_c;
-		//file.points = cloud;
 		ft_init_map(file);
-	//	print_cloud(cloud, 1);
 	}
 }

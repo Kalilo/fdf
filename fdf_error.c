@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 09:50:25 by meckhard          #+#    #+#             */
-/*   Updated: 2016/05/30 12:54:28 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 15:39:04 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ int ft_argcheck(int argc, char **argv, t_mapinfo *map)
 		{
 			printf("Usage : ./fdf <filename> [ case_size z_size ]\n");
 			return (-1);
-		}
-		else
-		{
-			map->scale_x = ft_atoi(argv[2]);
-			map->scale_y = ft_atoi(argv[3]);
 		}
 	}
 	return (0);
