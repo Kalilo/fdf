@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 12:56:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 13:07:07 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ typedef struct		s_mapinfo
 	int		scale_x;
 	int		scale_y;
 }					t_mapinfo;
+
+typedef struct		s_bresenham
+{
+	int				delta_x;
+	int				sign_x;
+	int				delta_y;
+	int				sign_y;
+	int				delta_error;
+}
 
 t_point				new_point(int x, int y, int z);
 
