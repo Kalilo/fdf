@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 09:25:19 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 09:34:39 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct		s_mapinfo
 	void	*win;
 	t_point	*points;
 	t_point	lastpoint;
+	int		scale_x;
+	int		scale_y;
 }					t_mapinfo;
 
 t_point				new_point(float x, float y, float z);
@@ -59,5 +61,7 @@ t_mapinfo			read_map(char* filename);
 int					map(t_mapinfo file, t_point **cloud);
 
 void				ft_init_map(t_mapinfo mapinfo);
+
+t_point				get_point(int x, int y, t_mapinfo map);
 
 #endif
