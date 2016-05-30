@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 08:40:44 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 08:49:10 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	}
 	points_c = map(file, &cloud);
 	printf("points = %d\n", points_c);
-	print_cloud(cloud, points_c);
+	//print_cloud(cloud, points_c);
 	file.points_num = points_c;
 	file.points = cloud;
 	ft_init_map(file);

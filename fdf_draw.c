@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/30 08:42:33 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/30 08:50:16 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static void	ft_draw_map(t_mapinfo mapinfo)
 	while (y < mapinfo.lines)
 	{
 		x = 0;
+		i = 0x00FFFFFF;
 		while (x < mapinfo.points_num / mapinfo.lines)
 		{
-			/*if (mapinfo.points[(y * 10) + x].y > 0)
-				mlx_pixel_put(mapinfo.mlx, mapinfo.win, x * 20, y * 20, 0x00FF0000);
-			else*/
-				mlx_pixel_put(mapinfo.mlx, mapinfo.win, x * 20, y * 20, 0x00FFFFFF);
+			if (mapinfo.points[(y * 10) + x].z > 0)
+				i = 0x00FF0000;
+			mlx_pixel_put(mapinfo.mlx, mapinfo.win, x * 20, y * 20, i);
 			x++;
 		}
 		y++;
