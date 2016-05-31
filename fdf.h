@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 13:32:07 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 14:58:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void				print_cloud(t_mapinfo map);
 void				ft_movemap(t_mapinfo *map, int offset_x, int offset_y);
 
 void				ft_centremap(t_mapinfo *map);
+
+void				ft_draw_map(t_mapinfo map);
 
 #endif
