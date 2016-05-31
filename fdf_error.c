@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 09:50:25 by meckhard          #+#    #+#             */
-/*   Updated: 2016/05/30 15:39:04 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 07:52:09 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int ft_argcheck(int argc, char **argv, t_mapinfo *map)
 {
 	if (argc == 2)
-		return (0);
+		return (2);
 	if (argc != 4)
 	{
 		printf("Usage : ./fdf <filename> [ case_size z_size ]\n");
