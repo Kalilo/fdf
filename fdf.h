@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 11:07:58 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 11:48:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <math.h>
 # include "libft.h"
 # include "mlx.h"
-# define WIN_X 400
-# define WIN_Y 400
+# define WIN_X 800
+# define WIN_Y 600
 # define DEFAULT_SCALE 20
 
 typedef struct		s_point
