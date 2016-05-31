@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 11:50:31 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 12:14:47 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ void		ft_init_map(t_mapinfo map)
 	map.win = win;	
 	//to_iso(&map);
 	scale_points(&map, map.scale_x, map.scale_y);
-	rotate_x(30, &map);
+	rotate_x(90, &map);
 	//rotate_z(30, &map);
-	ft_centremap(&map);
 	//rotate_y(30, &map);
 	ft_centremap(&map);
 	print_cloud(map);
