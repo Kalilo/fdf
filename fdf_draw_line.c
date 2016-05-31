@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:24:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 16:43:34 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 08:31:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	draw_line(t_point v1, t_point v2, t_mapinfo *m)
 	float	t;
 	t_point	sum;
 
-	printf("v1.x = %d v1.y = %d v2.x = %d v2.y = %d\n", v1.x, v1.y, v2.x, v2.y);
+	//printf("v1.x = %d v1.y = %d v2.x = %d v2.y = %d\n", v1.x, v1.y, v2.x, v2.y);
 
 	t = 0;
 	step = (float)(1 / (ft_fmax(ft_fabs(v1.x - v2.x), ft_fabs(v1.y - v2.y)) *
@@ -49,7 +49,7 @@ void	draw_line(t_point v1, t_point v2, t_mapinfo *m)
 		sum.x = v1.x + t * (v2.x - v1.x);
 		sum.y = v1.y + t * (v2.y - v1.y);
 		sum.z = v1.z + t * (v2.z - v1.z);
-		mlx_pixel_put(m->mlx, m->win, sum.x, sum.y, 0x00FFFFFF);//ft_color(m, sum));
+		mlx_pixel_put(m->mlx, m->win, sum.x, sum.y, 0x00FFFFFF);
 		t = t + step;
 	}
 }
