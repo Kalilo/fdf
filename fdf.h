@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 07:48:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 07:52:03 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "mlx.h"
 # define WIN_X 400
 # define WIN_Y 400
+# define DEFAULT_SCALE 20
 
 typedef struct		s_point
 {
