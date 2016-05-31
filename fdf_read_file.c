@@ -6,15 +6,11 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:41:32 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 16:08:49 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 12:43:52 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-/*
-Functions will read file contents and return char** to the contents
-*/
 
 int			count_lines(char *filename)
 {

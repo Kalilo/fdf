@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 17:10:53 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 12:43:20 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,3 @@ int	map(t_mapinfo file, t_point ***cloud)
 	*cloud = new;
 	return (d_count);
 }
-

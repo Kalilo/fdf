@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 12:49:17 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 13:31:23 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	ft_draw_map(t_mapinfo map)
 			col = 0x00FFFFFF;
 			if (map.points[v][u].y > 0)
 				col = 0x00FF0000;
-			//mlx_pixel_put(map.mlx, map.win, map.points[v][u].x, map.points[v][u].z, col);
 			if (v < map.lines - 1)
 				draw_line(map.points[v][u], map.points[v + 1][u], &map);
 			if (u < map.width - 1)
@@ -39,13 +38,19 @@ static void	ft_draw_map(t_mapinfo map)
 	mlx_loop(map.mlx);
 }
 
+int	my_key_funct(int keycode, void *param)
+{
+	printf("%d\n", keycode);
+	if (keycode == 53)
+		exit(0);
+	return (0);
+}
+
 void		ft_init_map(t_mapinfo map)
 {
 	void	*mlx;
 	void	*win;
 
-	t_point	temp1;
-	t_point	temp2;
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, WIN_X, WIN_Y, "FdF");
 	map.mlx = mlx;
@@ -58,5 +63,6 @@ void		ft_init_map(t_mapinfo map)
 	ft_centremap(&map);
 	print_cloud(map);
 	ft_draw_map(map);
-	//mlx_loop(map.mlx);
+	mlx_key_hook(map.win, my_key_funct, 0);
+	mlx_loop(map.mlx);
 }
