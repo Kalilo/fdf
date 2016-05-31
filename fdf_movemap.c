@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 09:11:32 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 11:14:20 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 11:36:41 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_centremap(t_mapinfo *map)
 		while (k < map->width)
 		{
 			map->points[i][k].x -= offset_x;
-			map->points[i][k].x += 200;
+			map->points[i][k].x += WIN_X / 2;
 			map->points[i][k].z -= offset_y;
-			map->points[i][k].z += 50;
+			map->points[i][k].z += WIN_Y / 2;
 			k++;
 		}
 		i++;
