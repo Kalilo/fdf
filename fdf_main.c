@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 09:10:21 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 10:09:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int	main(int argc, char **argv)
 		printf("map[%d] = %s\n",i, file.map[i]);
 		i++;
 	}
-	print_cloud(file);
+	//print_cloud(file);
 	ft_init_map(file);
 }

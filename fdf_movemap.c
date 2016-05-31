@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 09:11:32 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 09:48:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 10:23:58 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ t_point	ft_findcentre(t_mapinfo map)
 
 void	ft_centremap(t_mapinfo *map)
 {
-	int		offset_x;
+	/*int		offset_x;
 	int		offset_y;
 	t_point	centre;
 
 	centre = ft_findcentre(*map);
-	offset_x = centre.x;
-	offset_y = centre.z;
-	ft_movemap(map, offset_x, offset_y);
-}
-
-void	ft_movemap(t_mapinfo *map, int offset_x, int offset_y)
-{
+	//printf("Hi");
+	//printf("%d %d", centre.x, centre.z);
+	offset_x = WIN_X / 2 - centre.x;
+	offset_y = WIN_Y / 2 - centre.z;*/
 	int	i;
 	int	k;
 
@@ -39,10 +36,11 @@ void	ft_movemap(t_mapinfo *map, int offset_x, int offset_y)
 	{
 		while (k < map->width)
 		{
-			map->points[i][k].x += offset_x;
-			map->points[i][k].z += offset_y;
+			map->points[i][k].x += WIN_X / 2;
+			map->points[i][k].z += WIN_Y / 2;
 			k++;
 		}
 		i++;
 	}
+	//ft_movemap(map, offset_x, offset_y);
 }
