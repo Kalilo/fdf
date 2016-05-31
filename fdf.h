@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 09:00:46 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 09:39:05 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				translate_point(int x, int y, int z, t_point *point);
 
 void				scale_points(t_mapinfo *map, int scale_x, int scale_y);
 
-void				rotate_x(float angle, t_point *pt, int points);
+void				rotate_x(float angle, t_mapinfo *map);
 
 void				rotate_y(float angle, t_point *pt, int points);
 
