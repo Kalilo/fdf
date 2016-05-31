@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/30 14:07:23 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 07:49:23 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,22 @@ void	translate_point(int x, int y, int z, t_point *point)
 	point->z += z;
 }
 
-void	scale_cloud(t_point *point, float scale_f, int points)
+void	scale_points(t_mapinfo *map, int scale)
 {
 	int i;
+	int	k;
 
 	i = 0;
-	while (i < points)
+	while (i < map->lines)
 	{
-		point[i].x *= scale_f;
-		point[i].y *= scale_f;
-		point[i].z *= scale_f;
+		k = 0;
+		while (k < map->width)
+		{
+			map->points[i][k].x *= scale;
+			map->points[i][k].y *= scale;
+			map->points[i][k].z *= scale;
+			k++;
+		}
 		i++;
 	}
 }

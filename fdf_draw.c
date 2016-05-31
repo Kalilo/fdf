@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 07:28:03 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 07:33:34 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void		ft_init_map(t_mapinfo mapinfo)
 	mapinfo.mlx = mlx;
 	mapinfo.win = win;
 	//ft_draw_map(mapinfo);
-	temp1.x = 20;
-	temp1.y = 20;
-	temp1.z = 0;
-	temp2.x = 20;
-	temp2.y = 300;
-	temp2.z = 0;
+	//temp1.x = 20;
+	//temp1.y = 20;
+	//temp1.z = 0;
+	//temp2.x = 20;
+	//temp2.y = 300;
+	//temp2.z = 0;
 	draw_line(temp1, temp2, &mapinfo);
 	mlx_loop(mapinfo.mlx);
 }
