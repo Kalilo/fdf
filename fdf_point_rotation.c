@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 09:38:11 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 09:54:28 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ void	rotate_x(float angle, t_mapinfo *map)
 
 	v = 0;
 	while (v < map->lines)
-      {
+	{
 		u = 0;
 		while (u < map->width)
 		{
-			y1 = map->points[u][v].y * cos(angle) - map->points[u][v].z * sin(angle);
-			z1 = map->points[u][v].z * cos(angle) + map->points[u][v].y * sin(angle);
-			map->points[u][v].y = y1;
-			map->points[u][v].z = z1;
+			y1 = map->points[v][u].y * cos(angle) - map->points[v][u].z * sin(angle);
+			z1 = map->points[v][u].z * cos(angle) + map->points[v][u].y * sin(angle);
+			map->points[v][u].y = y1;
+			map->points[v][u].z = z1;
 			u++;
 		}
 		v++;
-     }
+	}
 }
 
 void	rotate_y(float angle, t_point *pt, int points)
