@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 08:50:56 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 09:00:46 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,9 @@ t_point				get_point(int x, int y, t_mapinfo map);
 int					ft_argcheck(int argc, char **argv);
 
 void				draw_line(t_point v1, t_point v2, t_mapinfo *m);
+
+void				to_iso(t_mapinfo *map);
+
+void				print_cloud(t_mapinfo map);
 
 #endif

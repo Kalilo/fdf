@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 08:50:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 09:04:20 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static void	ft_draw_map(t_mapinfo map)
 			col = 0x00FFFFFF;
 			if (map.points[v][u].y > 0)
 				col = 0x00FF0000;
-			//mlx_pixel_put(map.mlx, map.win, map.points[v][u].x, map.points[v][u].z, col);
-			if (v < map.lines - 1)
+			mlx_pixel_put(map.mlx, map.win, map.points[v][u].x, map.points[v][u].z, col);
+			/*if (v < map.lines - 1)
 				draw_line(map.points[v][u], map.points[v + 1][u], &map);
 			if (u < map.width - 1)
-				draw_line(map.points[v][u], map.points[v][u + 1], &map);
+				draw_line(map.points[v][u], map.points[v][u + 1], &map);*/
 			u++;
 		}
 		v++;
@@ -51,6 +51,8 @@ void		ft_init_map(t_mapinfo map)
 	map.mlx = mlx;
 	map.win = win;
 	scale_points(&map, map.scale_x, map.scale_y);
+	to_iso(&map);
+	print_cloud(map);	
 	ft_draw_map(map);
 	//temp1.x = 20;
 	//temp1.y = 20;
