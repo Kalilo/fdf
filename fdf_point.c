@@ -6,15 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 08:04:45 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 08:52:25 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Manipulate t_points*/
 #include "fdf.h"
 
-
-t_point	get_point(int x, int y, t_mapinfo map)
+t_point		get_point(int x, int y, t_mapinfo map)
 {
 	int	pt;
 	int	per_line;
@@ -32,7 +30,7 @@ t_point	get_point(int x, int y, t_mapinfo map)
 	return (map.points[x][y]);
 }
 
-t_point new_point(int x, int y, int z)
+t_point 	new_point(int x, int y, int z)
 {
 	t_point	new;
 
@@ -42,14 +40,37 @@ t_point new_point(int x, int y, int z)
 	return (new);
 }
 
-void	translate_point(int x, int y, int z, t_point *point)
+void		translate_point(int x, int y, int z, t_point *point)
 {
 	point->x += x;
 	point->y += y;
 	point->z += z;
 }
 
-void	scale_points(t_mapinfo *map, int scale_x, int scale_y)
+void	to_iso(t_mapinfo *map)
+{
+	int	i;
+	int	k;
+	int	p1;
+	int	p2;
+
+	i = 0;
+	while (i < map->lines)
+	{
+		k = 0;
+		while (k < map->width)
+		{
+			p1 = map->points[i][k].x;
+			p2 = map->points[i][k].z;
+			map->points[i][k].x = (p1 - p2) * map->scale_x / 2;
+			map->points[i][k].z = (p1 + p2) * map->scale_x / 2;
+			k++;
+		}
+		i++;
+	}
+}
+
+void		scale_points(t_mapinfo *map, int scale_x, int scale_y)
 {
 	int i;
 	int	k;
@@ -65,19 +86,6 @@ void	scale_points(t_mapinfo *map, int scale_x, int scale_y)
 			map->points[i][k].z *= scale_x;
 			k++;
 		}
-		i++;
-	}
-}
-
-void	project_mod(t_point *point, int points, float mod)
-{
-	int	i;
-
-	i = 0;
-	while (i < points)
-	{
-		point[i].x *= mod;
-		point[i].y *= mod;
 		i++;
 	}
 }

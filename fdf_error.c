@@ -6,13 +6,13 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 09:50:25 by meckhard          #+#    #+#             */
-/*   Updated: 2016/05/31 08:05:34 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 08:51:08 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int ft_argcheck(int argc, char **argv, t_mapinfo *map)
+int ft_argcheck(int argc, char **argv)
 {
 	if (argc == 2)
 		return (2);

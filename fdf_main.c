@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 08:14:37 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 08:51:34 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int argc, char **argv)
 			
 	printf("Commencing things\n");
 	file = read_map(argv[1]);
-	err = (ft_argcheck(argc, argv, &file));
+	err = (ft_argcheck(argc, argv));
 	init_file(&file, argv, err);
 	file.width = map(file, &file.points);
 	while (i < file.lines)
