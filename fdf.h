@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 15:07:20 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 15:13:33 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void				ft_movemap(t_mapinfo *map, int offset_x, int offset_y);
 void				ft_centremap(t_mapinfo *map);
 
 void				ft_draw_map(t_mapinfo map);
+
+float				ft_fabs(float a);
 
 #endif

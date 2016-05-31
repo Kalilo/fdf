@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 15:06:44 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 15:14:05 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_point	fix_neg(t_mapinfo *map)
 			}
 			i++;
 		}
-	translate_point(ft_abs(ret.x), ft_abs(ret.y), ft_abs(ret.z), map);
+	translate_point(ft_fabs(ret.x), ft_fabs(ret.y), ft_fabs(ret.z), map);
 }
 
 void	translate_rot(float angle, t_mapinfo *map, void (f)(float, t_mapinfo *))
