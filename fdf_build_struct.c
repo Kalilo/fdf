@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 12:43:20 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 15:07:46 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	count_numbers(char *str)
 	return (ret);
 }
 
-int	map(t_mapinfo file, t_point ***cloud)
+int	ft_map(t_mapinfo file, t_point ***cloud)
 {
 	int		l;
 	int		c;

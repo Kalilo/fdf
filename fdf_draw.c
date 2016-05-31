@@ -6,13 +6,13 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 13:43:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 15:07:26 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	ft_draw_map(t_mapinfo map)
+void	ft_draw_map(t_mapinfo map)
 {
 	int		u;
 	int		v;
@@ -37,30 +37,30 @@ static void	ft_draw_map(t_mapinfo map)
 	}
 }
 
-int	my_key_funct(int keycode, void *param)
+/*int	my_key_funct(int keycode, void *param)
 {
 	if (keycode == 53)
 		exit(0);
 	return (0);
-}
+}*/
 
-void		ft_init_map(t_mapinfo map)
+void		ft_init_map(t_mapinfo *map)
 {
 	void	*mlx;
 	void	*win;
 
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, WIN_X, WIN_Y, "FdF");
-	map.mlx = mlx;
-	map.win = win;	
+	map->mlx = mlx;
+	map->win = win;	
 	//to_iso(&map);
-	scale_points(&map, map.scale_x, map.scale_y);
+	scale_points(map, map->scale_x, map->scale_y);
 	//rotate_x(90, &map);
 	//rotate_z(1, &map);
 	//rotate_y(45, &map);
-	ft_centremap(&map);
-	print_cloud(map);
-	ft_draw_map(map);
-	mlx_key_hook(map.win, my_key_funct, 0);
-	mlx_loop(map.mlx);
+	ft_centremap(map);
+	//print_cloud(map);
+	//ft_draw_map(map);
+	//mlx_key_hook(map.win, my_key_funct, 0);
+	//mlx_loop(map.mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 14:58:05 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 15:07:20 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int					count_lines(char *filename);
 
 t_mapinfo			read_map(char* filename);
 
-int					map(t_mapinfo file, t_point ***cloud);
+int					ft_map(t_mapinfo file, t_point ***cloud);
 
-void				ft_init_map(t_mapinfo mapinfo);
+void				ft_init_map(t_mapinfo *mapinfo);
 
 t_point				get_point(int x, int y, t_mapinfo map);
 
