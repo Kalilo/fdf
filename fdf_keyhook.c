@@ -6,13 +6,13 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/05/31 10:39:44 by meckhard         ###   ########.fr       */
+/*   Updated: 2016/05/31 11:11:06 by meckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	key_hook(int keycode, s_mapinfo *m)
+int	key_hook(int keycode, t_mapinfo *m)
 {
 	if (keycode == 53)
 		exit(0);
