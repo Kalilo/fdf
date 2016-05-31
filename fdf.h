@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 09:47:12 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 11:07:58 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void				scale_points(t_mapinfo *map, int scale_x, int scale_y);
 
 void				rotate_x(float angle, t_mapinfo *map);
 
-void				rotate_y(float angle, t_point *pt, int points);
+void				rotate_y(float angle, t_mapinfo *map);
 
-void				rotate_z(float angle, t_point *pt, int points);
+void				rotate_z(float angle, t_mapinfo *map);
 
 int					count_lines(char *filename);
 

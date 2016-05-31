@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 10:23:38 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 11:27:59 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,15 @@ void		ft_init_map(t_mapinfo map)
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, WIN_X, WIN_Y, "FdF");
 	map.mlx = mlx;
-	map.win = win;
+	map.win = win;	
 	to_iso(&map);
-	//ft_centremap(&map);
-	//rotate_x(30, &map);
-	//print_cloud(map);
+	//scale_points(&map, map.scale_x, map.scale_y);
+	rotate_x(45, &map);
+	//rotate_z(-65, &map);
+	ft_centremap(&map);
+	//rotate_y(30, &map);
+	ft_centremap(&map);
+	print_cloud(map);
 	ft_draw_map(map);
-	mlx_loop(map.mlx);
+	//mlx_loop(map.mlx);
 }
