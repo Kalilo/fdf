@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 11:48:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 13:15:53 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_point
 	int	x;
 	int	y;
 	int	z;
+	int	col;
 }					t_point;
 
 typedef struct		s_mapinfo
