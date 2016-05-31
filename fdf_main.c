@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 07:52:06 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 08:14:37 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	init_file(t_mapinfo *file, char **argv, int err)
 		file->scale_x = DEFAULT_SCALE;
 		file->scale_y = DEFAULT_SCALE;
 	}
+	file->points_num = file->lines * file->width;
 }
 
 int	main(int argc, char **argv)
@@ -52,19 +53,15 @@ int	main(int argc, char **argv)
 	int	i = 0;
 			
 	printf("Commencing things\n");
-	err = (ft_argcheck(argc, argv, &file))
-	init_file(
-	if (err == 0)
+	file = read_map(argv[1]);
+	err = (ft_argcheck(argc, argv, &file));
+	init_file(&file, argv, err);
+	file.width = map(file, &file.points);
+	while (i < file.lines)
 	{
-		file = read_map(argv[1]);
-		while (i < file.lines)
-		{
-			printf("map[%d] = %s\n",i, file.map[i]);
-			i++;
-		}
-		file.width = map(file, &file.points);
-		print_cloud(file);
-		file.points_num = file.lines * file.width;
-		ft_init_map(file);
+		printf("map[%d] = %s\n",i, file.map[i]);
+		i++;
 	}
+	print_cloud(file);
+	ft_init_map(file);
 }
