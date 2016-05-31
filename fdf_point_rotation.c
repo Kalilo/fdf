@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 15:29:55 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 16:42:46 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,12 @@ t_point	fix_neg(t_mapinfo *map)
 				if (map->points[i][k].y < ret.y)
 					ret.y = map->points[i][k].y;
 				if (map->points[i][k].z < ret.z)
-					ret.y = map->points[i][k].z;
+					ret.z = map->points[i][k].z;
  				k++;
 			}
 			i++;
 		}
-	printf("negs x = %d y = %d z = %d\n", ret.x, ret.y , ret.z);
-	//translate_point((int)ft_fabs(ret.x), (int)ft_fabs(ret.y), (int)ft_fabs(ret.z), map);
+	translate_point((int)ft_fabs(ret.x), (int)ft_fabs(ret.y), (int)ft_fabs(ret.z), map);
 	return (ret);
 }
 
@@ -53,13 +52,13 @@ void	translate_rot(float angle, t_mapinfo *map, void (f)(float, t_mapinfo *))
 	c_y = map->points[map->lines / 2][map->width / 2].y;
 	c_z = map->points[map->lines / 2][map->width / 2].z;
 	printf("cx = %d cy = %d cz = %d\n", c_x, c_y, c_z);
-	printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);
+	//printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);	
 	translate_point(-c_x, -c_y, -c_z, map);
-	printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);
+	//printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);
 	f(angle, map);
-	translate_point(c_x, c_y, c_z, map);
 	fix_neg(map);
-	printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);
+	translate_point(c_x, c_y, c_z, map);
+	//printf("(%d ; %d ; %d)\n", map->points[0][0].x, map->points[0][0].y, map->points[0][0].z);
 }
 
 void	rotate_x(float angle, t_mapinfo *map)

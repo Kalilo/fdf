@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 09:11:32 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 13:12:15 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 16:48:26 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,24 @@ void	ft_centremap(t_mapinfo *map)
 		i++;
 	}
 }
+
+void	calc_perspective(int fl, t_mapinfo *map)
+{
+    int     u;
+    int     v;
+	float	pers;
+
+     v = 0;
+     while (v < map->lines)
+     {
+         u = 0;
+         while (u < map->width)
+         {
+			pers = fl / (fl + map->points[v][u].y);
+            map->points[v][u].z *= pers;
+			map->points[v][u].x *= pers;
+            u++;
+         }
+         v++;
+     }
+ }	

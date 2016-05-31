@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 14:44:49 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 14:52:16 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 17:11:41 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	to_iso(t_mapinfo *map)
 		{
 			p1 = map->points[i][k].x;
 			p2 = map->points[i][k].z;
-			map->points[i][k].x = (p1 - p2) * map->scale_x;
-			map->points[i][k].z = (p1 + p2) * map->scale_x;
+			map->points[i][k].x = (p1 - p2) * map->scale_x + map->points[i][k].y;
+			map->points[i][k].z = (p1 + p2) * map->scale_x + map->points[i][k].y;
 			map->points[i][k].y *= map->scale_y;
 			k++;
 		}
