@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 15:14:05 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 15:29:55 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ t_point	fix_neg(t_mapinfo *map)
 			}
 			i++;
 		}
-	translate_point(ft_fabs(ret.x), ft_fabs(ret.y), ft_fabs(ret.z), map);
+	printf("negs x = %d y = %d z = %d\n", ret.x, ret.y , ret.z);
+	//translate_point((int)ft_fabs(ret.x), (int)ft_fabs(ret.y), (int)ft_fabs(ret.z), map);
+	return (ret);
 }
 
 void	translate_rot(float angle, t_mapinfo *map, void (f)(float, t_mapinfo *))
