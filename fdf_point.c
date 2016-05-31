@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 07:49:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 08:04:45 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ t_point new_point(int x, int y, int z)
 	return (new);
 }
 
-/*Will offset coordinates by respective values*/
 void	translate_point(int x, int y, int z, t_point *point)
 {
 	point->x += x;
@@ -50,7 +49,7 @@ void	translate_point(int x, int y, int z, t_point *point)
 	point->z += z;
 }
 
-void	scale_points(t_mapinfo *map, int scale)
+void	scale_points(t_mapinfo *map, int scale_x, int scale_y)
 {
 	int i;
 	int	k;
@@ -61,9 +60,9 @@ void	scale_points(t_mapinfo *map, int scale)
 		k = 0;
 		while (k < map->width)
 		{
-			map->points[i][k].x *= scale;
-			map->points[i][k].y *= scale;
-			map->points[i][k].z *= scale;
+			map->points[i][k].x *= scale_x;
+			map->points[i][k].y *= scale_y;
+			map->points[i][k].z *= scale_x;
 			k++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 07:33:34 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 08:23:03 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_draw_map(t_mapinfo map)
 			col = 0x00FFFFFF;
 			if (map.points[v][u].y > 0)
 				col = 0x00FF0000;
-			mlx_pixel_put(map.mlx, map.win, map.points[v][u].x * map.scale_x, map.points[v][u].z * map.scale_y, col);
+			mlx_pixel_put(map.mlx, map.win, map.points[v][u].x, map.points[v][u].z, col);
 			u++;
 		}
 		v++;
@@ -35,7 +35,7 @@ static void	ft_draw_map(t_mapinfo map)
 	mlx_loop(map.mlx);
 }
 
-void		ft_init_map(t_mapinfo mapinfo)
+void		ft_init_map(t_mapinfo map)
 {
 	void	*mlx;
 	void	*win;
@@ -44,15 +44,16 @@ void		ft_init_map(t_mapinfo mapinfo)
 	t_point	temp2;
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, WIN_X, WIN_Y, "FdF");
-	mapinfo.mlx = mlx;
-	mapinfo.win = win;
-	//ft_draw_map(mapinfo);
+	map.mlx = mlx;
+	map.win = win;
+	scale_points(&map, map.scale_x, map.scale_y);
+	ft_draw_map(map);
 	//temp1.x = 20;
 	//temp1.y = 20;
 	//temp1.z = 0;
 	//temp2.x = 20;
 	//temp2.y = 300;
 	//temp2.z = 0;
-	draw_line(temp1, temp2, &mapinfo);
-	mlx_loop(mapinfo.mlx);
+	//draw_line(temp1, temp2, &mapinfo);
+	mlx_loop(map.mlx);
 }
