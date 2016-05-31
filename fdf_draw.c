@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 13:31:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 13:43:27 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ static void	ft_draw_map(t_mapinfo map)
 		}
 		v++;
 	}
-	mlx_loop(map.mlx);
 }
 
 int	my_key_funct(int keycode, void *param)
 {
-	printf("%d\n", keycode);
 	if (keycode == 53)
 		exit(0);
 	return (0);
