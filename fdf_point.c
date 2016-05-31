@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 12:04:12 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/05/31 13:41:26 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,24 @@ t_point 	new_point(int x, int y, int z)
 	return (new);
 }
 
-void		translate_point(int x, int y, int z, t_point *point)
+void		translate_point(int x, int y, int z, t_mapinfo *map)
 {
-	point->x += x;
-	point->y += y;
-	point->z += z;
+	int	i;
+	int	k;
+
+	i = 0;
+	while (i < map->lines)
+	{
+		k = 0;
+		while (k < map->width)
+		{
+			map->points[i][k].x += x;
+			map->points[i][k].z += z;
+			map->points[i][k].y += y;
+			k++;
+		}
+		i++;
+	}
 }
 
 void	to_iso(t_mapinfo *map)

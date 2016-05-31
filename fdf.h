@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 13:15:53 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/31 13:32:07 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ typedef struct		s_mapinfo
 
 t_point				new_point(int x, int y, int z);
 
-void				translate_point(int x, int y, int z, t_point *point);
+void				translate_point(int x, int y, int z, t_mapinfo *map);
+
+void				translate_rot(float angle, t_mapinfo *map, void (f)(float, t_mapinfo *));
 
 void				scale_points(t_mapinfo *map, int scale_x, int scale_y);
 
