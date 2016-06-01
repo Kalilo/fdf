@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/01 15:35:41 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/01 16:18:02 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ int	key_hook(int keycode, t_mapinfo *map)
 	if (keycode == 53)
 		exit(0);
 	if (keycode == 12)
-		rotate_y(-5, &mapcpy);
+		map->rot_y -= 5;
 	if (keycode == 14)
-		rotate_y(5, &mapcpy);
-	mlx_clear_window(0, map->win);
+		map->rot_y += 5;
+	mlx_clear_window(0, map->win);	
+	to_iso(&mapcpy);
+	rotate_x(45, &mapcpy);
+	rotate_y(map->rot_y, &mapcpy);	
 	ft_centremap(&mapcpy);
 	ft_draw_map(mapcpy);
 	ft_putnbr(keycode);
