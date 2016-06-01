@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 13:46:05 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 14:10:04 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ typedef struct		s_mapinfo
 	t_point	**points;
 	int		scale_x;
 	int		scale_y;
+	float	rot_x;
+	float	rot_y;
+	float	rot_z;
 }					t_mapinfo;
 
 t_point				new_point(int x, int y, int z);
