@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:41:32 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 12:43:52 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 15:03:18 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int			count_lines(char *filename)
 		line = NULL;
 	}
 	close(fd);
+	//ft_putstr("Hello");
 	return (lines);
 }
 
@@ -54,5 +55,6 @@ t_mapinfo	read_map(char *filename)
 		file.map[i++] = line;
 	}
 	close(fd);
+	//ft_putstr("Hello");
 	return (file);
 }

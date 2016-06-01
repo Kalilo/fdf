@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 15:32:00 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/01 15:45:18 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	count_numbers(char *str)
 		if (ft_isdigit(str[i]))
 		{
 			ret++;
-		 	while (ft_isdigit(str[i]) && str[i])
+		 	while (ft_isdigit(str[i]) && str[i] || str[i] == ',' || str[i] == 'x')
 				i++;
 		}
 		else
