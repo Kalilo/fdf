@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 15:00:32 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 16:59:45 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, WIN_X, WIN_Y, "FdF");
 	ft_init_map(&map);
-	ft_draw_map(map);
+	//ft_draw_map(map);
 	mlx_key_hook(map.win, key_hook, &map);
 	mlx_loop(map.mlx);
 }
