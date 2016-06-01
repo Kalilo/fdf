@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/01 08:25:17 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 13:46:00 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		ft_init_map(t_mapinfo *map)
 	map->win = win;*/
 	//scale_points(map, map->scale_x, map->scale_y);
 	to_iso(map);
-	translate_rot(-45, map, &rotate_x);	
+	translate_rot(45, map, &rotate_x);	
 	//calc_perspective(300, map);
 	//rotate_x(90, &map);
 	//rotate_z(1, &map);
