@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 13:05:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 15:32:00 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,26 @@ int	ft_map(t_mapinfo file, t_point ***cloud)
 	}
 	*cloud = new;
 	return (d_count);
+}
+
+t_point	**ft_mapcopy(t_mapinfo *map)
+{
+	int		l;
+	int		c;
+	t_point	**new;
+
+	l = 0;
+	new = (t_point**)malloc(sizeof(t_point*) * map->lines);
+	while (l < map->lines)
+	{
+		new[l] = (t_point*)malloc(sizeof(t_point) * map->width);
+		c = 0;
+		while (c < map->width)
+		{
+			new[l][c] = map->points[l][c];
+			c++;
+		}
+		l++;
+	}
+	return (new);
 }
