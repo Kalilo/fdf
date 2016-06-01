@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 16:42:46 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/01 13:23:00 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,15 @@ void	rotate_x(float angle, t_mapinfo *map)
 	int		u;
 	int		v;
 
+	angle = angle * 0.01745329252;
 	v = 0;
 	while (v < map->lines)
 	{
 		u = 0;
 		while (u < map->width)
 		{
-			y1 = map->points[v][u].y * cos(angle) - map->points[v][u].z * sin(angle);
-			z1 = map->points[v][u].z * cos(angle) + map->points[v][u].y * sin(angle);
+			z1 = map->points[v][u].z * cos(angle) - map->points[v][u].y * sin(angle);
+			y1 = map->points[v][u].y * cos(angle) + map->points[v][u].z * sin(angle);
 			map->points[v][u].y = y1;
 			map->points[v][u].z = z1;
 			u++;
@@ -93,6 +94,7 @@ void	rotate_y(float angle, t_mapinfo *map)
 	int		v;
 
 	v = 0;
+	angle = angle * 0.01745329252;
 	while (v < map->lines)
 	{
 		u = 0;
@@ -123,11 +125,11 @@ void	rotate_z(float angle, t_mapinfo *map)
 	float	x1;
 	float	y1;
 	int		i;
-
 	int		u;
 	int		v;
 
 	v = 0;
+	angle = angle * 0.01745329252;
 	while (v < map->lines)
 	{
 		u = 0;
