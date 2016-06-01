@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 08:35:22 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 13:13:55 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,6 @@ void	init_map(t_mapinfo *map, char **argv, int err)
 	map->points_num = map->lines * map->width;
 }
 
-int	my_key_funct(int keycode, void *param)
-{
-	printf("keycode %d", keycode);
-	if (keycode == 0)
-		printf("Hello");
-	if (keycode == 53)
-		exit(0);
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_mapinfo	map;
@@ -69,6 +59,6 @@ int	main(int argc, char **argv)
 	map.win = mlx_new_window(map.mlx, WIN_X, WIN_Y, "FdF");
 	ft_init_map(&map);
 	ft_draw_map(map);
-	mlx_key_hook(map.win, my_key_funct, &map);
+	mlx_key_hook(map.win, key_hook, &map);
 	mlx_loop(map.mlx);
 }

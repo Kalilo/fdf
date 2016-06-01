@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/31 16:24:58 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/01 13:14:16 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ float				ft_fabs(float a);
 
 void				calc_perspective(int fl, t_mapinfo *map);
 
+int					key_hook(int keycode, t_mapinfo *map);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 14:44:49 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 08:17:48 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 13:13:32 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ t_point 	new_point(int x, int y, int z)
 	new.x = x;
 	new.y = y;
 	new.z = z;
+	if (new.y > 0)
+		new.col = 1;
+	else
+		new.col = 0;
 	return (new);
 }
 

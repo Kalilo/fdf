@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:24:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 08:18:09 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/01 13:11:12 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	draw_line(t_point v1, t_point v2, t_mapinfo *m)
 	t_point	sum;
 
 	t = 0;
-	if (v1.y > 0 && v2.y > 0)
+	if (v1.col == 1 && v2.col == 1)
 		col = 0x00FF0000;
 	else
 		col = 0x00FFFFFF;
