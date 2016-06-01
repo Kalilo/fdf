@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/31 17:12:06 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/01 08:25:17 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void	ft_draw_map(t_mapinfo map)
 
 void		ft_init_map(t_mapinfo *map)
 {
-	void	*mlx;
+	/*void	*mlx;
 	void	*win;
 
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, WIN_X, WIN_Y, "FdF");
 	map->mlx = mlx;
-	map->win = win;		
+	map->win = win;*/
 	//scale_points(map, map->scale_x, map->scale_y);
 	to_iso(map);
 	translate_rot(-45, map, &rotate_x);	
