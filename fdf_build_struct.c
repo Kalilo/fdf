@@ -6,13 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:17:51 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:27:39 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		count_numbers(char *str)
+static int		count_numbers(char *str)
 {
 	int	i;
 	int ret;
@@ -34,7 +34,7 @@ int		count_numbers(char *str)
 	return (ret);
 }
 
-void	ft_map(t_mapinfo *map, t_point ***cloud)
+void			ft_map(t_mapinfo *map, t_point ***cloud)
 {
 	int		l;
 	int		c;
@@ -60,7 +60,7 @@ void	ft_map(t_mapinfo *map, t_point ***cloud)
 	*cloud = new;
 }
 
-t_point	**ft_mapcopy(t_mapinfo *map)
+t_point			**ft_mapcopy(t_mapinfo *map)
 {
 	int		l;
 	int		c;
@@ -82,7 +82,7 @@ t_point	**ft_mapcopy(t_mapinfo *map)
 	return (new);
 }
 
-void	free_map(t_mapinfo map)
+void			free_map(t_mapinfo map)
 {
 	int		v;
 
