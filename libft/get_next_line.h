@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 08:28:09 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/13 10:33:39 by ddu-toit         ###   ########.fr       */
+/*   Created: 2016/05/16 07:44:23 by ddu-toit          #+#    #+#             */
+/*   Updated: 2016/05/27 15:15:53 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 10000
 
-void	*ft_memset(void *str, int c, size_t n)
-{
-	size_t	i;
-	char	*temp;
+# include "libft.h"
 
-	i = 0;
-	temp = (char*)str;
-	while (i < n)
-	{
-		temp[i] = (unsigned char)c;
-		i++;
-	}
-	return (str);
-}
+int	get_next_line(const int fd, char **line);
+
+#endif
