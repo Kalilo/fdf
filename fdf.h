@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 08:41:43 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:02:35 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,9 @@ int					key_hook(int keycode, t_mapinfo *map);
 t_point				**ft_mapcopy(t_mapinfo *map);
 
 void				ft_draw_cpy(t_mapinfo map);
+
+void				free_map(t_mapinfo map);
+
+void				free_file(t_mapinfo map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 16:23:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 09:46:04 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,19 @@ t_point	**ft_mapcopy(t_mapinfo *map)
 		l++;
 	}
 	return (new);
+}
+
+void	free_map(t_mapinfo map)
+{
+	int     u;
+	int     v;
+
+	 v = 0;
+	 while (v < map.lines)
+	 {
+		free(map.points[v]);
+		v++;
+	}
+	free(map.points);
+	map.points = NULL;
 }

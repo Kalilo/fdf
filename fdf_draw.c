@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/02 10:45:42 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:05:15 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void		ft_init_map(t_mapinfo *map)
 	rotate_z(map->rot_z, &mapcpy);
 	ft_centremap(&mapcpy);
 	ft_draw_map(mapcpy);
+	free_map(mapcpy);
 }

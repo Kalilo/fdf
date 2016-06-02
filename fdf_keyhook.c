@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/02 10:55:11 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:05:46 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	key_hook(int keycode, t_mapinfo *map)
 	rotate_z(map->rot_z, &mapcpy);
 	ft_centremap(&mapcpy);
 	ft_draw_map(mapcpy);
+	free_map(mapcpy);
 	ft_putnbr(keycode);
 	ft_putchar('\n');
 	return (0);
