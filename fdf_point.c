@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 14:44:49 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 14:46:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:13:53 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_point		get_point(int x, int y, t_mapinfo map)
 	return (map.points[x][y]);
 }
 
-t_point 	new_point(int x, int y, int z)
+t_point		new_point(int x, int y, int z)
 {
 	t_point	new;
 
@@ -64,7 +64,7 @@ void		translate_point(int x, int y, int z, t_mapinfo *map)
 	}
 }
 
-void	to_iso(t_mapinfo *map)
+void		to_iso(t_mapinfo *map)
 {
 	int	i;
 	int	k;
@@ -79,8 +79,10 @@ void	to_iso(t_mapinfo *map)
 		{
 			p1 = map->points[i][k].x;
 			p2 = map->points[i][k].z;
-			map->points[i][k].x = (p1 - p2) * map->scale_x + map->points[i][k].y;
-			map->points[i][k].z = (p1 + p2) * map->scale_x + map->points[i][k].y;
+			map->points[i][k].x = (p1 - p2) * map->scale_x +
+				map->points[i][k].y;
+			map->points[i][k].z = (p1 + p2) * map->scale_x +
+				map->points[i][k].y;
 			map->points[i][k].y *= map->scale_y;
 			k++;
 		}

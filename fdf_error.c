@@ -6,13 +6,13 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 09:50:25 by meckhard          #+#    #+#             */
-/*   Updated: 2016/05/31 08:53:48 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:11:38 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int ft_argcheck(int argc, char **argv)
+int	ft_argcheck(int argc, char **argv)
 {
 	if (argc == 2)
 		return (2);
@@ -20,8 +20,8 @@ int ft_argcheck(int argc, char **argv)
 	{
 		printf("Usage : ./fdf <filename> [ case_size z_size ]\n");
 		return (-1);
-	}	
-	else 
+	}
+	else
 	{
 		if ((ft_atoi(argv[2]) == 0) || (ft_atoi(argv[3]) == 0))
 		{

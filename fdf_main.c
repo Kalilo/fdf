@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 12:39:29 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:12:33 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	init_map(t_mapinfo *map, char **argv, int err)
 	map->points_num = map->lines * map->width;
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	t_mapinfo	map;
 	int			points_c;
 	int			err;
-			
+
 	map = read_map(argv[1]);
 	err = (ft_argcheck(argc, argv));
 	init_map(&map, argv, err);

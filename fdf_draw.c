@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/02 15:02:19 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:10:33 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_draw_instruct(t_mapinfo map)
 	mlx_string_put(map.mlx, map.win, 5, 5, col, "Q and E for y rotation");
 	mlx_string_put(map.mlx, map.win, 5, 20, col, "A and D for x rotation");
 	mlx_string_put(map.mlx, map.win, 5, 35, col, "W and S for z rotation");
-	mlx_string_put(map.mlx, map.win, 5, 50, col, "Arrows for scale. R to reset");
+	mlx_string_put(map.mlx, map.win, 5, 50, col,
+			"Arrows for scale. R to reset");
 }
 
 void	ft_draw_map(t_mapinfo map)
@@ -46,8 +47,8 @@ void	ft_draw_map(t_mapinfo map)
 	ft_draw_instruct(map);
 }
 
-void		ft_init_map(t_mapinfo *map)
-{	
+void	ft_init_map(t_mapinfo *map)
+{
 	t_mapinfo mapcpy;
 
 	map->rot_x = 245;

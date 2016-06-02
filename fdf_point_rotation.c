@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 14:46:49 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:15:00 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void	rotate_x(float angle, t_mapinfo *map)
 		u = 0;
 		while (u < map->width)
 		{
-			z1 = map->points[v][u].z * cos(angle) - map->points[v][u].y * sin(angle);
-			y1 = map->points[v][u].y * cos(angle) + map->points[v][u].z * sin(angle);
+			z1 = map->points[v][u].z * cos(angle) - map->points[v][u].y
+				* sin(angle);
+			y1 = map->points[v][u].y * cos(angle) + map->points[v][u].z
+				* sin(angle);
 			map->points[v][u].y = y1;
 			map->points[v][u].z = z1;
 			u++;
@@ -51,8 +53,10 @@ void	rotate_y(float angle, t_mapinfo *map)
 		u = 0;
 		while (u < map->width)
 		{
-			x1 = map->points[v][u].z * cos(angle) + map->points[v][u].x * sin(angle);
-			z1 = map->points[v][u].x * cos(angle) - map->points[v][u].z * sin(angle);
+			x1 = map->points[v][u].z * cos(angle) + map->points[v][u].x
+				* sin(angle);
+			z1 = map->points[v][u].x * cos(angle) - map->points[v][u].z
+				* sin(angle);
 			map->points[v][u].x = x1;
 			map->points[v][u].z = z1;
 			u++;
@@ -76,8 +80,10 @@ void	rotate_z(float angle, t_mapinfo *map)
 		u = 0;
 		while (u < map->width)
 		{
-			x1 = map->points[v][u].y * cos(angle) - map->points[v][u].x * sin(angle);
-			y1 = map->points[v][u].y * sin(angle) + map->points[v][u].x * cos(angle);
+			x1 = map->points[v][u].y * cos(angle) - map->points[v][u].x
+				* sin(angle);
+			y1 = map->points[v][u].y * sin(angle) + map->points[v][u].x
+				* cos(angle);
 			map->points[v][u].x = x1;
 			map->points[v][u].y = y1;
 			u++;
