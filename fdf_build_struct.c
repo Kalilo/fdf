@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:10:37 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:17:51 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ t_point	**ft_mapcopy(t_mapinfo *map)
 
 void	free_map(t_mapinfo map)
 {
-	int		u;
 	int		v;
 
 	v = 0;

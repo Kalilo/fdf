@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:15:00 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:19:37 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	rotate_y(float angle, t_mapinfo *map)
 {
 	float	x1;
 	float	z1;
-	int		i;
 	int		u;
 	int		v;
 
@@ -69,7 +68,6 @@ void	rotate_z(float angle, t_mapinfo *map)
 {
 	float	x1;
 	float	y1;
-	int		i;
 	int		u;
 	int		v;
 

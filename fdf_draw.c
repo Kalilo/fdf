@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/02 15:10:33 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:18:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_draw_map(t_mapinfo map)
 {
 	int		u;
 	int		v;
-	int		col;
 
 	v = 0;
 	while (v < map.lines)

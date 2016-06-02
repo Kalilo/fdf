@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/02 15:06:26 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:18:43 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	key_scale(int keycode, t_mapinfo *map)
 		map->scale_y -= 1;
 }
 
-void	key_reset(int keycode, t_mapinfo *map)
+void	key_reset(t_mapinfo *map)
 {
 	map->rot_y = 110;
 	map->rot_z = -125;
@@ -58,7 +58,7 @@ int		key_hook(int keycode, t_mapinfo *map)
 	if (keycode == 53)
 		exit(0);
 	else if (keycode == 15)
-		key_reset(keycode, map);
+		key_reset(map);
 	else if (keycode >= 0 && keycode <= 14)
 		key_rot(keycode, map);
 	else if (keycode >= 123 && keycode <= 126)
