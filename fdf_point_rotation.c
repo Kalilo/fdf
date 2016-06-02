@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 16:59:46 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 08:28:17 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ void	rotate_y(float angle, t_mapinfo *map)
 		u = 0;
 		while (u < map->width)
 		{
-			x1 = map->points[v][u].x * cos(angle) - map->points[v][u].z * sin(angle);
-			z1 = map->points[v][u].z * cos(angle) + map->points[v][u].x * sin(angle);
-			map->points[v][u].y = x1;
+			x1 = map->points[v][u].z * cos(angle) + map->points[v][u].x * sin(angle);
+			z1 = map->points[v][u].x * cos(angle) - map->points[v][u].z * sin(angle);
+			map->points[v][u].x = x1;
 			map->points[v][u].z = z1;
 			u++;
 		}
@@ -122,8 +122,8 @@ void	rotate_z(float angle, t_mapinfo *map)
 		u = 0;
 		while (u < map->width)
 		{
-			x1 = map->points[v][u].x * cos(angle) - map->points[v][u].y * sin(angle);
-			y1 = map->points[v][u].x * sin(angle) + map->points[v][u].y * cos(angle);
+			x1 = map->points[v][u].y * cos(angle) - map->points[v][u].x * sin(angle);
+			y1 = map->points[v][u].y * sin(angle) + map->points[v][u].x * cos(angle);
 			map->points[v][u].x = x1;
 			map->points[v][u].y = y1;
 			u++;
