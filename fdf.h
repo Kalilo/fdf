@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:04:56 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:37:11 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,15 @@ void				rotate_y(float angle, t_mapinfo *map);
 
 void				rotate_z(float angle, t_mapinfo *map);
 
-int					count_lines(char *filename);
-
 t_mapinfo			read_map(char *filename);
 
 void				ft_map(t_mapinfo *map, t_point ***cloud);
 
 void				ft_init_map(t_mapinfo *mapinfo);
 
-t_point				get_point(int x, int y, t_mapinfo map);
-
 int					ft_argcheck(int argc, char **argv);
 
 void				draw_line(t_point v1, t_point v2, t_mapinfo *m);
-
-void				to_iso(t_mapinfo *map);
-
-void				print_cloud(t_mapinfo map);
 
 void				ft_movemap(t_mapinfo *map, int offset_x, int offset_y);
 
@@ -87,15 +79,9 @@ void				ft_centremap(t_mapinfo *map);
 
 void				ft_draw_map(t_mapinfo map);
 
-float				ft_fabs(float a);
-
-void				calc_perspective(int fl, t_mapinfo *map);
-
 int					key_hook(int keycode, t_mapinfo *map);
 
 t_point				**ft_mapcopy(t_mapinfo *map);
-
-void				ft_draw_cpy(t_mapinfo map);
 
 void				free_map(t_mapinfo map);
 

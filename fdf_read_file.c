@@ -6,13 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:41:32 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:11:41 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:38:15 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int			count_lines(char *filename)
+static int			count_lines(char *filename)
 {
 	int		fd;
 	int		lines;
@@ -34,7 +34,7 @@ int			count_lines(char *filename)
 	return (lines);
 }
 
-t_mapinfo	read_map(char *filename)
+t_mapinfo			read_map(char *filename)
 {
 	char		*line;
 	t_mapinfo	file;
@@ -57,7 +57,7 @@ t_mapinfo	read_map(char *filename)
 	return (file);
 }
 
-void		free_file(t_mapinfo map)
+void				free_file(t_mapinfo map)
 {
 	int l;
 

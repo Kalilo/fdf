@@ -6,13 +6,13 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/02 15:18:43 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:32:08 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	key_rot(int keycode, t_mapinfo *map)
+static void	key_rot(int keycode, t_mapinfo *map)
 {
 	if (keycode == 12)
 		map->rot_y += ANGL;
@@ -28,7 +28,7 @@ void	key_rot(int keycode, t_mapinfo *map)
 		map->rot_z -= ANGL;
 }
 
-void	key_scale(int keycode, t_mapinfo *map)
+static void	key_scale(int keycode, t_mapinfo *map)
 {
 	if (keycode == 123)
 		map->scale_x -= 1;
@@ -40,7 +40,7 @@ void	key_scale(int keycode, t_mapinfo *map)
 		map->scale_y -= 1;
 }
 
-void	key_reset(t_mapinfo *map)
+static void	key_reset(t_mapinfo *map)
 {
 	map->rot_y = 110;
 	map->rot_z = -125;
@@ -49,7 +49,7 @@ void	key_reset(t_mapinfo *map)
 	map->scale_y = map->ori_y;
 }
 
-int		key_hook(int keycode, t_mapinfo *map)
+int			key_hook(int keycode, t_mapinfo *map)
 {
 	t_mapinfo mapcpy;
 

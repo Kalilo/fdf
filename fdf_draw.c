@@ -6,13 +6,13 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/02 15:18:05 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:29:38 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_draw_instruct(t_mapinfo map)
+static void	ft_draw_instruct(t_mapinfo map)
 {
 	int	col;
 
@@ -24,7 +24,7 @@ void	ft_draw_instruct(t_mapinfo map)
 			"Arrows for scale. R to reset");
 }
 
-void	ft_draw_map(t_mapinfo map)
+void		ft_draw_map(t_mapinfo map)
 {
 	int		u;
 	int		v;
@@ -46,7 +46,7 @@ void	ft_draw_map(t_mapinfo map)
 	ft_draw_instruct(map);
 }
 
-void	ft_init_map(t_mapinfo *map)
+void		ft_init_map(t_mapinfo *map)
 {
 	t_mapinfo mapcpy;
 

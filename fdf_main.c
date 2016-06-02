@@ -6,13 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:18:58 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:33:32 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	init_map(t_mapinfo *map, char **argv, int err)
+static void	init_map(t_mapinfo *map, char **argv, int err)
 {
 	if (err != 2)
 	{
@@ -29,7 +29,7 @@ void	init_map(t_mapinfo *map, char **argv, int err)
 	map->points_num = map->lines * map->width;
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_mapinfo	map;
 	int			err;

@@ -6,29 +6,12 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 14:44:49 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:36:29 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:52:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:34:19 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-t_point		get_point(int x, int y, t_mapinfo map)
-{
-	int	pt;
-	int	per_line;
-	int	i;
-
-	pt = 0;
-	i = 0;
-	per_line = map.points_num / map.lines;
-	while (i < y)
-	{
-		pt += per_line;
-		i++;
-	}
-	pt += per_line + x;
-	return (map.points[x][y]);
-}
 
 t_point		new_point(int x, int y, int z)
 {
