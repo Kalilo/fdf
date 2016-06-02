@@ -6,13 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 15:36:52 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 14:39:13 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:10:37 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	count_numbers(char *str)
+int		count_numbers(char *str)
 {
 	int	i;
 	int ret;
@@ -24,7 +24,8 @@ int	count_numbers(char *str)
 		if (ft_isdigit(str[i]))
 		{
 			ret++;
-		 	while ((ft_isdigit(str[i]) && str[i]) || str[i] == ',' || str[i] == 'x')
+			while ((ft_isdigit(str[i]) && str[i])
+					|| str[i] == ',' || str[i] == 'x')
 				i++;
 		}
 		else
@@ -37,7 +38,7 @@ void	ft_map(t_mapinfo *map, t_point ***cloud)
 {
 	int		l;
 	int		c;
-	char 	**split_line;
+	char	**split_line;
 	t_point	**new;
 
 	l = 0;
@@ -83,12 +84,12 @@ t_point	**ft_mapcopy(t_mapinfo *map)
 
 void	free_map(t_mapinfo map)
 {
-	int     u;
-	int     v;
+	int		u;
+	int		v;
 
-	 v = 0;
-	 while (v < map.lines)
-	 {
+	v = 0;
+	while (v < map.lines)
+	{
 		free(map.points[v]);
 		v++;
 	}

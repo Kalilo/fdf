@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:41:32 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 09:51:07 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 15:11:41 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_mapinfo	read_map(char *filename)
 	return (file);
 }
 
-void	free_file(t_mapinfo map)
+void		free_file(t_mapinfo map)
 {
 	int l;
 
