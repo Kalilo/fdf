@@ -6,11 +6,11 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 13:46:49 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/27 10:59:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/05/20 13:50:42 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static int	ft_read(const int fd, char **file)
 {

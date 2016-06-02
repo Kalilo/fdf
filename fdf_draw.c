@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/01 16:59:43 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 08:44:37 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		ft_init_map(t_mapinfo *map)
 {	
 	t_mapinfo mapcpy;
 
-	rotate_x(45, &mapcpy);
+	//rotate_x(45, &mapcpy);
 	map->rot_x = 45;
 	map->rot_y = 0;
 	map->rot_z = 0;

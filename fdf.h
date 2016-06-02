@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 16:40:18 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 08:41:43 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define WIN_X 800
 # define WIN_Y 600
 # define DEFAULT_SCALE 20
-# define ANGL 10
+# define ANGL 5
 
 typedef struct		s_point
 {
