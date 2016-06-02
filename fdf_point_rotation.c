@@ -6,58 +6,11 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 12:31:31 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 14:46:49 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Manipulate t_points*/
 #include "fdf.h"
-
-t_point	fix_neg(t_mapinfo *map)
-{
-	t_point	ret;
-	int	i;
-	int k;
-
-	i = 0;
-	k = 0;
-	ret = new_point(0 , 0, 0, 0);
- 		while (i < map->lines)
-		{
-			k = 0;
-			while (k < map->width)
- 			{
-				if (map->points[i][k].x < ret.x)
-					ret.x = map->points[i][k].x;
-				if (map->points[i][k].y < ret.y)
-					ret.y = map->points[i][k].y;
-				if (map->points[i][k].z < ret.z)
-					ret.z = map->points[i][k].z;
-				ret.col = map->points[i][k].col;
- 				k++;
-			}
-			i++;
-		}
-	translate_point((int)ft_fabs(ret.x), (int)ft_fabs(ret.y), (int)ft_fabs(ret.z), map);
-	return (ret);
-}
-
-void	translate_rot(float angle, t_mapinfo *map, void (f)(float, t_mapinfo *))
-{
-	int		c_x;
-	int		c_y;
-	int		c_z;
-	t_point	neg_corr;
-
-	c_x = map->points[map->lines / 2][map->width / 2].x;
-	c_y = map->points[map->lines / 2][map->width / 2].y;
-	c_z = map->points[map->lines / 2][map->width / 2].z;
-	printf("cx = %d cy = %d cz = %d\n", c_x, c_y, c_z);
-	translate_point(-c_x, -c_y, -c_z, map);
-	f(angle, map);
-	fix_neg(map);
-	translate_point(c_x, c_y, c_z, map);
-}
 
 void	rotate_x(float angle, t_mapinfo *map)
 {
