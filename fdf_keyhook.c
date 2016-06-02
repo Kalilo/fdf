@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/02 08:40:56 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 10:55:11 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,23 @@ int	key_hook(int keycode, t_mapinfo *map)
 	if (keycode == 1)
 		map->rot_x -= ANGL;
 	if (keycode == 0)
-		map->rot_z -= ANGL;
-	if (keycode == 2)
 		map->rot_z += ANGL;
+	if (keycode == 2)
+		map->rot_z -= ANGL;
 	if (keycode == 15)
 	{
-		map->rot_y = 0;
-		map->rot_z = 0;
+		map->rot_y = 270;
+		map->rot_z = 100;
 		map->rot_x = 45;
 	}
+	if (keycode == 123)
+		map->scale_x -= 1;
+	if (keycode == 124)
+		map->scale_x += 1;
+	if (keycode == 126)
+		map->scale_y += 1;
+	if (keycode == 125)
+		map->scale_y -= 1;
 	mlx_clear_window(0, map->win);	
 	to_iso(&mapcpy);
 	rotate_x(map->rot_x, &mapcpy);
