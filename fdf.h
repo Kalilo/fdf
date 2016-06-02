@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 11:02:35 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 12:29:58 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ typedef struct		s_mapinfo
 	float	rot_x;
 	float	rot_y;
 	float	rot_z;
+	int		ori_x;
+	int		ori_y;
 }					t_mapinfo;
 
-t_point				new_point(int x, int y, int z);
+t_point				new_point(int x, int y, int z, int col);
 
 void				translate_point(int x, int y, int z, t_mapinfo *map);
 
@@ -64,7 +66,7 @@ int					count_lines(char *filename);
 
 t_mapinfo			read_map(char* filename);
 
-int					ft_map(t_mapinfo file, t_point ***cloud);
+void				ft_map(t_mapinfo *map, t_point ***cloud);
 
 void				ft_init_map(t_mapinfo *mapinfo);
 

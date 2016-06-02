@@ -6,7 +6,7 @@
 /*   By: meckhard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 10:00:47 by meckhard          #+#    #+#             */
-/*   Updated: 2016/06/02 11:05:46 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 12:26:21 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	key_hook(int keycode, t_mapinfo *map)
 		map->rot_y = 270;
 		map->rot_z = 100;
 		map->rot_x = 45;
+		map->scale_x = map->ori_x;
+		map->scale_y = map->ori_y;
 	}
 	if (keycode == 123)
 		map->scale_x -= 1;

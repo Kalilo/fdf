@@ -6,29 +6,11 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:42:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 11:08:53 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 12:39:29 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	print_cloud(t_mapinfo map)
-{
-	int	l;
-	int c;
-	l = 0;
-	c = 0;
-	while (l < map.lines)
-	{
-		c = 0;
-		while (c < map.width)
-		{
-			printf("point[%d][%d] : (%d ; %d ; %d)\n", l , c, map.points[l][c].x, map.points[l][c].y, map.points[l][c].z);
-			c++;
-		}
-		l++;
-	}
-}
 
 void	init_map(t_mapinfo *map, char **argv, int err)
 {
@@ -42,6 +24,8 @@ void	init_map(t_mapinfo *map, char **argv, int err)
 		map->scale_x = DEFAULT_SCALE;
 		map->scale_y = DEFAULT_SCALE;
 	}
+	map->ori_x = map->scale_x;
+	map->ori_y = map->scale_y;
 	map->points_num = map->lines * map->width;
 }
 
@@ -54,7 +38,7 @@ int	main(int argc, char **argv)
 	map = read_map(argv[1]);
 	err = (ft_argcheck(argc, argv));
 	init_map(&map, argv, err);
-	map.width = ft_map(map, &map.points);
+	ft_map(&map, &map.points);
 	free_file(map);
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, WIN_X, WIN_Y, "FdF");

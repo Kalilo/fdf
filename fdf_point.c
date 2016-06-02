@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 14:44:49 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 07:41:20 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 12:29:36 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,14 @@ t_point		get_point(int x, int y, t_mapinfo map)
 	return (map.points[x][y]);
 }
 
-t_point 	new_point(int x, int y, int z)
+t_point 	new_point(int x, int y, int z, int col)
 {
 	t_point	new;
 
 	new.x = x;
 	new.y = y;
 	new.z = z;
-	if (new.y > 0)
-		new.col = 1;
-	else
-		new.col = 0;
+	new.col = col;
 	return (new);
 }
 

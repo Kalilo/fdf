@@ -6,11 +6,22 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 07:53:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/02 11:05:15 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 12:29:09 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	ft_draw_instruct(t_mapinfo map)
+{
+	int	col;
+
+	col = 0x00FFFFFF;
+	mlx_string_put(map.mlx, map.win, 5, 5, col, "Q and E for y rotation");
+	mlx_string_put(map.mlx, map.win, 5, 20, col, "A and D for x rotation");
+	mlx_string_put(map.mlx, map.win, 5, 35, col, "W and S for z rotation");
+	mlx_string_put(map.mlx, map.win, 5, 50, col, "Arrows for scale. R to reset");
+}
 
 void	ft_draw_map(t_mapinfo map)
 {
@@ -25,9 +36,9 @@ void	ft_draw_map(t_mapinfo map)
 		u = 0;
 		while (u < map.width)
 		{
-			col = 0x00FFFFFF;
+			/*col = 0x00FFFFFF;
 			if (map.points[v][u].y > 0)
-				col = 0x00FF0000;
+				col = 0x00FF0000;*/
 			if (v < map.lines - 1)
 				draw_line(map.points[v][u], map.points[v + 1][u], &map);
 			if (u < map.width - 1)
@@ -36,6 +47,7 @@ void	ft_draw_map(t_mapinfo map)
 		}
 		v++;
 	}
+	ft_draw_instruct(map);
 }
 
 void		ft_init_map(t_mapinfo *map)

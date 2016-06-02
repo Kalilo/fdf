@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 13:21:30 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 08:28:17 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/02 12:31:31 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_point	fix_neg(t_mapinfo *map)
 
 	i = 0;
 	k = 0;
-	ret = new_point(0 , 0, 0);
+	ret = new_point(0 , 0, 0, 0);
  		while (i < map->lines)
 		{
 			k = 0;
@@ -33,6 +33,7 @@ t_point	fix_neg(t_mapinfo *map)
 					ret.y = map->points[i][k].y;
 				if (map->points[i][k].z < ret.z)
 					ret.z = map->points[i][k].z;
+				ret.col = map->points[i][k].col;
  				k++;
 			}
 			i++;
