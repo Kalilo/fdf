@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/30 16:24:05 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/01 13:11:12 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/02 14:46:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	draw_line(t_point v1, t_point v2, t_mapinfo *m)
 	if (v1.col == 1 && v2.col == 1)
 		col = 0x00FF0000;
 	else
-		col = 0x00FFFFFF;
+		col = 0x808080;
 	step = (float)(1 / (ft_fmax(ft_fabs(v1.x - v2.x), ft_fabs(v1.z - v2.z)) *
 				2));
 	while (t <= 1)
