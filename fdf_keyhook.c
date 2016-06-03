@@ -53,13 +53,13 @@ int			key_hook(int keycode, t_mapinfo *map)
 {
 	t_mapinfo mapcpy;
 
-	mapcpy = *map;
-	mapcpy.points = ft_mapcopy(map);
 	if (keycode == ESC)
 		exit(0);
 	else if (keycode == L_R)
 		key_reset(map);
-	else if (keycode >= L_A && keycode <= L_E)
+	mapcpy = *map;
+	mapcpy.points = ft_mapcopy(map);
+	if (keycode >= L_A && keycode <= L_E)
 		key_rot(keycode, map);
 	else if (keycode >= K_LEFT && keycode <= K_UP)
 		key_scale(keycode, map);
