@@ -61,7 +61,5 @@ int			key_hook(int keycode, t_mapinfo *map)
 	free_map(mapcpy);
 	if (keycode == 15 || keycode == 34)
 		ft_draw_instruct(*map);
-	//ft_putnbr(keycode);
-	//ft_putchar('\n');
 	return (0);
 }
