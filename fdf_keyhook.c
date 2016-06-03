@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 15:56:03 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:56:05 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/03 14:46:43 by ghavenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 static void	key_rot(int keycode, t_mapinfo *map)
 {
-	if (keycode == 12)
+	if (keycode == L_Q)
 		map->rot_y += ANGL;
-	if (keycode == 14)
+	if (keycode == L_E)
 		map->rot_y -= ANGL;
-	if (keycode == 13)
+	if (keycode == L_W)
 		map->rot_x += ANGL;
-	if (keycode == 1)
+	if (keycode == L_S)
 		map->rot_x -= ANGL;
-	if (keycode == 0)
+	if (keycode == 27)
 		map->rot_z += ANGL;
-	if (keycode == 2)
+	if (keycode == 24)
 		map->rot_z -= ANGL;
 }
 
 static void	key_scale(int keycode, t_mapinfo *map)
 {
-	if (keycode == 123)
+	if (keycode == K_LEFT)
 		map->scale_x -= 1;
-	if (keycode == 124)
+	if (keycode == K_RIGHT)
 		map->scale_x += 1;
-	if (keycode == 126)
+	if (keycode == K_UP)
 		map->scale_y += 1;
-	if (keycode == 125)
+	if (keycode == K_DOWN)
 		map->scale_y -= 1;
 }
 
@@ -55,13 +55,13 @@ int			key_hook(int keycode, t_mapinfo *map)
 
 	mapcpy = *map;
 	mapcpy.points = ft_mapcopy(map);
-	if (keycode == 53)
+	if (keycode == ESC)
 		exit(0);
-	else if (keycode == 15)
+	else if (keycode == L_R)
 		key_reset(map);
-	else if (keycode >= 0 && keycode <= 14)
+	else if (keycode >= L_A && keycode <= L_E)
 		key_rot(keycode, map);
-	else if (keycode >= 123 && keycode <= 126)
+	else if (keycode >= K_LEFT && keycode <= K_UP)
 		key_scale(keycode, map);
 	mlx_clear_window(0, map->win);
 	scale_points(&mapcpy, mapcpy.scale_x, mapcpy.scale_y);

@@ -6,7 +6,7 @@
 #    By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/13 16:42:54 by ddu-toit          #+#    #+#              #
-#    Updated: 2016/05/27 15:20:28 by ddu-toit         ###   ########.fr        #
+#    Updated: 2016/06/03 13:43:33 by ghavenga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,14 +45,14 @@ CFLAG = -Wall -Werror -Wextra -c
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAG) $(FILES)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@gcc $(CFLAG) $(FILES)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

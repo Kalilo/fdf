@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:37:11 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/03 16:04:57 by ghavenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,24 @@
 # define L_A 0
 # define L_S 1
 # define L_D 2
+# define L_R 15
 # define K_UP 126
 # define K_DOWN 125
 # define K_LEFT 123
 # define K_RIGHT 124
 # define ESC 53
+# define NUM_0 82
+# define NUM_1 83
+# define NUM_2 84
+# define NUM_3 85
+# define NUM_4 86
+# define NUM_5 87
+# define NUM_6 88
+# define NUM_7 89
+# define NUM_8 90
+# define NUM_9 92
+# define MINUS 78
+# define PLUS 69
 
 # define INIT_X 245
 # define INIT_Y 110
