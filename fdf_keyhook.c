@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 15:56:03 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/03 14:46:43 by ghavenga         ###   ########.fr       */
+/*   Updated: 2016/06/03 18:54:23 by ghavenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	key_rot(int keycode, t_mapinfo *map)
 		map->rot_x += ANGL;
 	if (keycode == L_S)
 		map->rot_x -= ANGL;
-	if (keycode == 27)
+	if (keycode == L_D)
 		map->rot_z += ANGL;
-	if (keycode == 24)
+	if (keycode == L_A)
 		map->rot_z -= ANGL;
 }
 
@@ -53,13 +53,13 @@ int			key_hook(int keycode, t_mapinfo *map)
 {
 	t_mapinfo mapcpy;
 
-	mapcpy = *map;
-	mapcpy.points = ft_mapcopy(map);
 	if (keycode == ESC)
 		exit(0);
 	else if (keycode == L_R)
 		key_reset(map);
-	else if (keycode >= L_A && keycode <= L_E)
+	mapcpy = *map;
+	mapcpy.points = ft_mapcopy(map);
+	if (keycode >= L_A && keycode <= L_E)
 		key_rot(keycode, map);
 	else if (keycode >= K_LEFT && keycode <= K_UP)
 		key_scale(keycode, map);
