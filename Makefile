@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/02 15:19:49 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/03 14:01:36 by ghavenga         ###   ########.fr        #
+#    Updated: 2016/06/03 18:25:04 by ghavenga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,3 +45,6 @@ re: fclean all
 norme:
 	@clear
 	@norminette $(FILES)
+
+test:
+	@./fdf ../collab_fdf/test_maps/42.fdf
