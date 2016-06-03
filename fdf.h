@@ -29,6 +29,7 @@
 # define YELLOW 0x00808000
 # define BLUE 0x000000FF
 # define GRAY 0x808080
+# define BROWN 0xAD4F09
 
 # define L_Q 12
 # define L_W 13
