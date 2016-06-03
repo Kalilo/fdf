@@ -6,18 +6,19 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 15:55:51 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/03 18:19:01 by ghavenga         ###   ########.fr       */
+/*   Updated: 2016/06/03 18:22:28 by ghavenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	ft_draw_instruct(t_mapinfo map)
+void		ft_draw_instruct(t_mapinfo map)
 {
-	mlx_string_put(map.mlx, map.win, 5, 5, WHITE, 
-			"Numpad Influences Orientation");
-	mlx_string_put(map.mlx, map.win, 5, 25, WHITE,
-			"Arrows Affect Scale. 0 Resets Map");
+	mlx_string_put(CON_FOUR 5, WHITE, "Q and E for y rotation");
+	mlx_string_put(CON_FOUR 20, WHITE, "A and D for x rotation");
+	mlx_string_put(CON_FOUR 35, WHITE, "W and S for z rotation");
+	mlx_string_put(CON_FOUR 50, WHITE, "Arrows for scale. R to reset");
+	mlx_string_put(CON_FOUR 65, WHITE, "I displays these instructions");
 }
 
 void		ft_draw_map(t_mapinfo map)
@@ -39,7 +40,6 @@ void		ft_draw_map(t_mapinfo map)
 		}
 		k++;
 	}
-	ft_draw_instruct(map);
 }
 
 void		ft_init_map(t_mapinfo *map)

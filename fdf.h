@@ -26,6 +26,7 @@
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
 # define BROWN 0x808080
+
 # define L_Q 12
 # define L_W 13
 # define L_E 14
@@ -58,6 +59,8 @@
 # define CON_ONE str[k] == ',' || str[k] == 'x'
 # define CON_TWO fabs((double)(p1.x - p2.x))
 # define CON_THREE fabs((double)(p1.z - p2.z))
+# define CON_FOUR map.mlx, map.win, 5,
+# define MAP_POINT map->points[v][u]
 
 typedef struct		s_point
 {
@@ -117,6 +120,8 @@ void				ft_movemap(t_mapinfo *map, int offset_x, int offset_y);
 void				ft_centremap(t_mapinfo *map);
 
 void				ft_draw_map(t_mapinfo map);
+
+void				ft_draw_instruct(t_mapinfo map);
 
 int					key_hook(int keycode, t_mapinfo *map);
 
