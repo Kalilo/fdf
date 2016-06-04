@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fdf_draw_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/02 15:55:28 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/04 08:40:51 by ghavenga         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fdf.h"
 
 int				colourpicker(t_point p1, t_point p2, float k)
@@ -30,23 +18,42 @@ int				colourpicker(t_point p1, t_point p2, float k)
 	return (col);
 }
 
-
-void			draw_line(t_point p1, t_point p2, t_mapinfo *m)
+static void	draw_point(t_point p1, t_point p2, t_mapinfo *m, t_line_var lvar)
 {
-	float	step;
 	float	k;
-	int		col;
-	t_point	sum;
+	int		colour;
+	float	step;
 
 	k = 0;
 	step = (float)pow((fmax(CON_TWO, CON_THREE)), -1);
-	while (k <= 1)
+	while (!(p1.x == p2.x && p1.z == p2.z))
 	{
-		col = colourpicker(p1, p2, k);
-		sum.x = p1.x + k * (p2.x - p1.x);
-		//sum.y = p1.y + k * (p2.y - p1.y);
-		sum.z = p1.z + k * (p2.z - p1.z);
-		mlx_pixel_put(m->mlx, m->win, sum.x, sum.z, col);
+		lvar.e2 = lvar.err;
+		if (lvar.e2 > -lvar.dx)
+		{
+			lvar.err -= lvar.dy;
+			p1.x += lvar.sx;
+		}
+		if (lvar.e2 < lvar.dy)
+		{
+			lvar.err += lvar.dx;
+			p1.z += lvar.sy;
+		}
 		k += step;
+		colour = colourpicker(p1, p2, k);
+		mlx_pixel_put(m->mlx, m->win, p1.x, p1.z, colour);
 	}
+}
+
+void		draw_line(t_point p1, t_point p2, t_mapinfo *m)
+{
+	t_line_var	lvar;
+
+	lvar.dx = abs(p2.x - p1.x);
+	lvar.sx = p1.x < p2.x ? 1 : -1;
+	lvar.dy = abs(p2.z - p1.z);
+	lvar.sy = p1.z < p2.z ? 1 : -1;
+	lvar.err = (lvar.dx > lvar.dy ? lvar.dx : -lvar.dy) / 2;
+	mlx_pixel_put(m->mlx, m->win, p1.x, p1.z, 0x00808080);
+	draw_point(p1, p2, m, lvar);
 }

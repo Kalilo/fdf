@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/03 20:57:32 by ghavenga         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef FDF_H
 # define FDF_H
 
@@ -29,6 +17,7 @@
 # define YELLOW 0x00B08000
 # define BLUE 0x000000FF
 # define GRAY 0x808080
+# define BROWN 0xAD4F09
 
 # define L_Q 12
 # define L_W 13
@@ -92,6 +81,16 @@ typedef struct		s_mapinfo
 	int		ori_x;
 	int		ori_y;
 }					t_mapinfo;
+
+typedef struct		s_line_var
+{
+	int		dx;
+	int		sx;
+	int		dy;
+	int		sy;
+	int		err;
+	int		e2;
+}					t_line_var;
 
 t_point				new_point(int x, int y, int z);
 
