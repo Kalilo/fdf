@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   build_struct.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/04 13:57:51 by khansman          #+#    #+#             */
+/*   Updated: 2016/06/04 13:57:52 by khansman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 static int		count_numbers(char *str)
 {
 	long int	k;
-	long int 	num;
+	long int	num;
 
 	k = 0;
 	num = 0;
@@ -26,7 +38,7 @@ void			ft_map(t_mapinfo *map, t_point ***cloud)
 	long int	k;
 	long int	l;
 	char		**split_line;
-	t_point	**new;
+	t_point		**new;
 
 	k = 0;
 	map->width = count_numbers(map->map[k]);

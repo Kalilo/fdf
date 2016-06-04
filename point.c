@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   point.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/04 13:57:05 by khansman          #+#    #+#             */
+/*   Updated: 2016/06/04 13:57:08 by khansman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 t_point		new_point(int x, int y, int z)
@@ -36,7 +48,7 @@ void		translate_point(int x, int y, int z, t_mapinfo *map)
 
 void		scale_points(t_mapinfo *map, int scale_x, int scale_y)
 {
-	int 		i;
+	int			i;
 	int			k;
 	static int	z_old;
 	static int	z_shift;
@@ -51,7 +63,7 @@ void		scale_points(t_mapinfo *map, int scale_x, int scale_y)
 		{
 			map->points[i][k].x *= scale_x;
 			map->points[i][k].y *= scale_x + (z_shift * scale_x / 7);
-			map->points[i][k].z *= scale_x;			
+			map->points[i][k].z *= scale_x;
 			k++;
 		}
 		i++;

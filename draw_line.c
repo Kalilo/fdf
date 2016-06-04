@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_line.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/04 13:58:42 by khansman          #+#    #+#             */
+/*   Updated: 2016/06/04 13:58:43 by khansman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
-int				colourpicker(t_point p1, t_point p2, float k)
+int			colourpicker(t_point p1, t_point p2, float k)
 {
 	int			col;
-	
+
 	if (p1.col == 1 && p2.col == 1)
 		col = YELLOW;
 	else if (p1.col == 1 || p2.col == 1)
@@ -20,9 +32,9 @@ int				colourpicker(t_point p1, t_point p2, float k)
 
 static void	draw_point(t_point p1, t_point p2, t_mapinfo *m, t_line_var lvar)
 {
-	float	k;
-	int		colour;
-	float	step;
+	float		k;
+	int			colour;
+	float		step;
 
 	k = 0;
 	step = (float)pow((fmax(CON_TWO, CON_THREE)), -1);

@@ -1,18 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/06/04 14:06:56 by khansman          #+#    #+#             */
+/*   Updated: 2016/06/04 14:07:00 by khansman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
-void		ft_draw_instruct(t_mapinfo map)
+void		ft_init_map(t_mapinfo *map)
 {
-	mlx_string_put(CON_FOUR 5, WHITE, "Q and E for y rotation");
-	mlx_string_put(CON_FOUR 20, WHITE, "A and D for x rotation");
-	mlx_string_put(CON_FOUR 35, WHITE, "W and S for z rotation");
-	mlx_string_put(CON_FOUR 50, WHITE, "Arrows for scale. R to reset");
-	mlx_string_put(CON_FOUR 65, WHITE, "I displays these instructions");
+	t_mapinfo	mapcpy;
+
+	map->rot_x = INIT_X;
+	map->rot_y = INIT_Y;
+	map->rot_z = INIT_Z;
+	mapcpy = *map;
+	mapcpy.points = ft_mapcopy(map);
+	scale_points(&mapcpy, map->scale_x, map->scale_y);
+	rotate_x(map->rot_x, &mapcpy);
+	rotate_y(map->rot_y, &mapcpy);
+	rotate_z(map->rot_z, &mapcpy);
+	ft_centremap(&mapcpy);
+	ft_draw_map(mapcpy);
+	free_map(mapcpy);
 }
 
 void		ft_draw_map(t_mapinfo map)
 {
-	int		k;
-	int		l;
+	int			k;
+	int			l;
 
 	k = 0;
 	while (k < map.lines)
@@ -30,20 +51,11 @@ void		ft_draw_map(t_mapinfo map)
 	}
 }
 
-void		ft_init_map(t_mapinfo *map)
+void		ft_draw_instruct(t_mapinfo map)
 {
-	t_mapinfo mapcpy;
-
-	map->rot_x = INIT_X;
-	map->rot_y = INIT_Y;
-	map->rot_z = INIT_Z;
-	mapcpy = *map;
-	mapcpy.points = ft_mapcopy(map);
-	scale_points(&mapcpy, map->scale_x, map->scale_y);
-	rotate_x(map->rot_x, &mapcpy);
-	rotate_y(map->rot_y, &mapcpy);
-	rotate_z(map->rot_z, &mapcpy);
-	ft_centremap(&mapcpy);
-	ft_draw_map(mapcpy);
-	free_map(mapcpy);
+	mlx_string_put(map.mlx, map.win, 5, 5, WHITE, INFO01);
+	mlx_string_put(map.mlx, map.win, 5, 20, WHITE, INFO02);
+	mlx_string_put(map.mlx, map.win, 5, 35, WHITE, INFO03);
+	mlx_string_put(map.mlx, map.win, 5, 50, WHITE, INFO04);
+	mlx_string_put(map.mlx, map.win, 5, 65, WHITE, INFO05);
 }
