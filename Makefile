@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/06/02 15:19:49 by daviwel           #+#    #+#              #
-#    Updated: 2016/06/03 18:25:04 by ghavenga         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = fdf
 FILES = fdf_build_struct.c fdf_draw.c fdf_draw_line.c fdf_error.c \
 		fdf_keyhook.c fdf_main.c fdf_movemap.c fdf_point.c \

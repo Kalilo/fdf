@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fdf_point.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/02 15:56:45 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/02 15:56:48 by ddu-toit         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fdf.h"
 
 t_point		new_point(int x, int y, int z)
@@ -28,8 +16,8 @@ t_point		new_point(int x, int y, int z)
 
 void		translate_point(int x, int y, int z, t_mapinfo *map)
 {
-	int	i;
-	int	k;
+	int			i;
+	int			k;
 
 	i = 0;
 	while (i < map->lines)
@@ -48,20 +36,25 @@ void		translate_point(int x, int y, int z, t_mapinfo *map)
 
 void		scale_points(t_mapinfo *map, int scale_x, int scale_y)
 {
-	int i;
-	int	k;
+	int 		i;
+	int			k;
+	static int	z_old;
+	static int	z_shift;
 
 	i = 0;
+	if (scale_y - z_old != 0 && z_old != 0)
+		z_shift = z_shift + (scale_y - z_old);
 	while (i < map->lines)
 	{
 		k = 0;
 		while (k < map->width)
 		{
 			map->points[i][k].x *= scale_x;
-			map->points[i][k].y *= scale_y;
-			map->points[i][k].z *= scale_x;
+			map->points[i][k].y *= scale_x + (z_shift * scale_x / 7);
+			map->points[i][k].z *= scale_x;			
 			k++;
 		}
 		i++;
 	}
+	z_old = scale_y;
 }
