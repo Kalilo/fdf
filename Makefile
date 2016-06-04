@@ -1,7 +1,7 @@
 NAME = fdf
-FILES = fdf_build_struct.c fdf_draw.c fdf_draw_line.c fdf_error.c \
-		fdf_keyhook.c fdf_main.c fdf_movemap.c fdf_point.c \
-		fdf_point_rotation.c fdf_read_file.c
+FILES = build_struct.c draw.c draw_line.c error.c \
+		keyhook.c main.c movemap.c point.c \
+		point_rotation.c read_file.c
 OBJECTS = $(FILES:.c=.o)
 CFLAG = -Wall -Werror -Wextra
 ATTACH = -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
