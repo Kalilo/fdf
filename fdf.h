@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/03 20:39:24 by ghavenga         ###   ########.fr       */
+/*   Updated: 2016/06/04 08:29:00 by reyvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,16 @@ typedef struct		s_mapinfo
 	int		ori_x;
 	int		ori_y;
 }					t_mapinfo;
+
+typedef struct		s_line_var
+{
+	int		dx;
+	int		sx;
+	int		dy;
+	int		sy;
+	int		err;
+	int		e2;
+}					t_line_var;
 
 t_point				new_point(int x, int y, int z);
 
