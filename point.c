@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-t_point		new_point(int x, int y, int z)
+t_point		new_point(long int x, long int y, long int z)
 {
 	t_point	new;
 
@@ -26,7 +26,7 @@ t_point		new_point(int x, int y, int z)
 	return (new);
 }
 
-void		translate_point(int x, int y, int z, t_mapinfo *map)
+void		translate_point(long int x, long int y, long int z, t_mapinfo *map)
 {
 	int			i;
 	int			k;
@@ -46,7 +46,7 @@ void		translate_point(int x, int y, int z, t_mapinfo *map)
 	}
 }
 
-void		scale_points(t_mapinfo *map, int scale_x, int scale_y)
+void		scale_points(t_mapinfo *map, long int scale_x, long int scale_y)
 {
 	int			i;
 	int			k;

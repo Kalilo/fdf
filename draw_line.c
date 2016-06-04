@@ -14,7 +14,7 @@
 
 int			colourpicker(t_point p1, t_point p2, float k)
 {
-	int			col;
+	long int	col;
 
 	if (p1.col == 1 && p2.col == 1)
 		col = YELLOW;
@@ -33,7 +33,7 @@ int			colourpicker(t_point p1, t_point p2, float k)
 static void	draw_point(t_point p1, t_point p2, t_mapinfo *m, t_line_var lvar)
 {
 	float		k;
-	int			colour;
+	long int	colour;
 	float		step;
 
 	k = 0;
@@ -57,15 +57,22 @@ static void	draw_point(t_point p1, t_point p2, t_mapinfo *m, t_line_var lvar)
 	}
 }
 
+long int	ft_labs(long int k)
+{
+	if (k >= 0)
+		return (k);
+	return (-k);
+}
+
 void		draw_line(t_point p1, t_point p2, t_mapinfo *m)
 {
 	t_line_var	lvar;
 
-	lvar.dx = abs(p2.x - p1.x);
+	lvar.dx = ft_labs(p2.x - p1.x);
 	lvar.sx = p1.x < p2.x ? 1 : -1;
-	lvar.dy = abs(p2.z - p1.z);
+	lvar.dy = ft_labs(p2.z - p1.z);
 	lvar.sy = p1.z < p2.z ? 1 : -1;
 	lvar.err = (lvar.dx > lvar.dy ? lvar.dx : -lvar.dy) / 2;
-	mlx_pixel_put(m->mlx, m->win, p1.x, p1.z, 0x00808080);
+	mlx_pixel_put(m->mlx, m->win, p1.x, p1.z, GRAY);
 	draw_point(p1, p2, m, lvar);
 }

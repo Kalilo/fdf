@@ -32,8 +32,8 @@ void		ft_init_map(t_mapinfo *map)
 
 void		ft_draw_map(t_mapinfo map)
 {
-	int			k;
-	int			l;
+	long int	k;
+	long int	l;
 
 	k = 0;
 	while (k < map.lines)
