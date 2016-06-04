@@ -45,12 +45,12 @@ int			key_hook(int keycode, t_mapinfo *map)
 		exit(0);
 	else if (keycode == L_R)
 		key_reset(map);
-	mapcpy = *map;
-	mapcpy.points = ft_mapcopy(map);
-	if (keycode >= L_A && keycode <= L_E)
+	else if (keycode >= L_A && keycode <= L_E)
 		key_rot(keycode, map);
 	else if (keycode >= K_LEFT && keycode <= K_UP)
 		key_scale(keycode, map);
+	mapcpy = *map;
+	mapcpy.points = ft_mapcopy(map);
 	mlx_clear_window(0, map->win);
 	scale_points(&mapcpy, mapcpy.scale_x, mapcpy.scale_y);
 	rotate_x(map->rot_x, &mapcpy);
