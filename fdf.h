@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 12:30:36 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/06/03 20:39:24 by ghavenga         ###   ########.fr       */
+/*   Updated: 2016/06/03 20:57:32 by ghavenga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define WHITE 0x00FFFFFF
 # define RED 0x00FF0000
 # define GREEN 0x0000FF00
-# define YELLOW 0x00808000
+# define YELLOW 0x00B08000
 # define BLUE 0x000000FF
 # define GRAY 0x808080
 
