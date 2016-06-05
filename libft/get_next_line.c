@@ -1,65 +1,110 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next03.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: khansman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/21 13:06:12 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 15:17:49 by ddu-toit         ###   ########.fr       */
+/*   Created: 2016/05/18 13:06:44 by khansman          #+#    #+#             */
+/*   Updated: 2016/05/22 16:31:48 by khansman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "get_next_line.h"
 
-static int	ft_read(const int fd, char **file)
+static t_buff	read_buffer(const int fd, t_buff b)
 {
-	char		*buff;
-	char		*fresh;
-	int			read_bytes;
+	long int			k;
 
-	if (!(buff = (char *)malloc(BUFF_SIZE + 1)))
-		return (-1);
-	read_bytes = read(fd, buff, BUFF_SIZE);
-	if (read_bytes > 0)
+	b.buf_pos = 0;
+	k = -1;
+	b.buf_fd = fd;
+	b.eof = read(fd, b.buff, BUFF_SIZE);
+	if (b.eof < BUFF_SIZE && b.eof > 0)
 	{
-		buff[read_bytes] = '\0';
-		fresh = ft_strjoin(*file, buff);
-		if (!(fresh))
-			return (-1);
-		free(*file);
-		*file = fresh;
+		k = b.eof - 1;
+		while (k++ <= BUFF_SIZE)
+			b.buff[k] = '\0';
 	}
-	if (buff)
-		free(buff);
-	return (read_bytes);
+	return (b);
 }
 
-int			get_next_line(const int fd, char **line)
+static char		*re_malloc(char *line, size_t size)
 {
-	static char	*file;
-	char		*endl_index;
-	int			ret;
+	char			*tmp;
 
-	if (!file && !(file = (char*)malloc(sizeof(char))))
-		return (-1);
-	endl_index = ft_strchr(file, '\n');
-	while (endl_index == NULL)
+	tmp = ft_strnew(size + L_LEN);
+	if (size > 0)
 	{
-		if ((ret = ft_read(fd, &file)) == 0)
-		{
-			if ((endl_index = ft_strchr(file, '\0')) == file)
-				return (0);
-		}
-		else if (ret < 0)
-			return (-1);
-		else
-			endl_index = ft_strchr(file, '\n');
+		tmp = ft_strcpy(tmp, line);
+		free(line);
 	}
-	if (!(*line = ft_strsub(file, 0, endl_index - file)))
+	return (tmp);
+}
+
+static t_buff	get_line(const int fd, char **line, t_buff b)
+{
+	unsigned int	line_pos;
+	char			*l;
+
+	line_pos = 0;
+	if (fd != b.buf_fd || b.buf_pos >= BUFF_SIZE || b.eof < 0)
+		b = read_buffer(fd, b);
+	while (b.buff[b.buf_pos] != '\n' && b.buf_pos < b.eof && b.eof > -1)
+	{
+		if (((line_pos + 1) % L_LEN == 0) || line_pos == 0)
+			l = re_malloc(l, line_pos);
+		l[line_pos] = b.buff[b.buf_pos];
+		line_pos++;
+		b.buf_pos++;
+		if (b.buf_pos >= BUFF_SIZE)
+			b = read_buffer(fd, b);
+	}
+	if ((b.eof < BUFF_SIZE && b.eof != -1) && (b.eof <= b.buf_pos))
+		b.eof = -2;
+	b.buf_pos++;
+	if (line_pos == 0)
+		*line = 0;
+	else
+		*line = l;
+	return (b);
+}
+
+static int		get_buff(const int fd, char **line)
+{
+	static t_buff	arr[NUM_FILES];
+	long int		k;
+
+	k = 0;
+	while (k < NUM_FILES && fd != arr[k].buf_fd)
+		k++;
+	if (k == NUM_FILES)
+		k--;
+	if (arr[k].buf_fd == fd)
+		arr[k] = get_line(fd, line, arr[k]);
+	else
+	{
+		while (k >= 0 && arr[k].buf_fd != 0 && arr[k].eof > -1)
+			k--;
+		if (k >= 0)
+			arr[k] = get_line(fd, line, arr[k]);
+		else
+			arr[k] = get_line(fd, line, arr[NUM_FILES - 1]);
+	}
+	return (arr[k].eof);
+}
+
+int				get_next_line(const int fd, char **line)
+{
+	long int	eof;
+
+	if (BUFF_SIZE > MAX_BUFF || BUFF_SIZE < 1)
 		return (-1);
-	endl_index = ft_strdup(endl_index + 1);
-	free(file);
-	file = endl_index;
+	eof = get_buff(fd, line);
+	if (eof == -1)
+		return (-1);
+	if (eof == -2)
+		return (0);
 	return (1);
 }
