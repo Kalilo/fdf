@@ -30,6 +30,8 @@ static int			count_lines(char *filename)
 		free(line);
 		line = NULL;
 	}
+	if (lines > 0)
+		free(line);
 	close(fd);
 	return (lines);
 }
